@@ -198,7 +198,12 @@
 <body class="bg-white text-gray-900 antialiased">
   
   <!-- ==================== SECTION 1: HEADER & BIO (NEO-BRUTALISM) ==================== -->
-  <section id="home" class="min-h-screen bg-[#FAFAFA] px-4 py-12 md:py-20 overflow-hidden">
+  <section id="home" class="min-h-screen bg-[#FAFAFA] px-4 py-12 md:py-20 overflow-hidden relative">
+    <!-- Brutal Grid Background -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px); background-size: 20px 20px;"></div>
+    <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image: linear-gradient(#FF4D8D 1px, transparent 1px), linear-gradient(90deg, #0038FF 1px, transparent 1px); background-size: 80px 80px;"></div>
+    <!-- Diagonal stripes -->
+    <div class="absolute top-0 right-0 w-96 h-96 opacity-[0.02] pointer-events-none" style="background: repeating-linear-gradient(45deg, #111 0, #111 1px, transparent 0, transparent 50%); background-size: 10px 10px;"></div>
     <div class="max-w-6xl mx-auto">
       
       <!-- Top metadata bar -->
@@ -320,48 +325,48 @@
       </div>
       
       <div class="poster-grid justify-center items-center" id="posterGrid">
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/1.webp', 'Poster 1')">
-          <img src="assets/porto poster/1.webp" alt="Poster 1" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/1.webp', 'Poster 1')">
+          <img src="assets/1.webp" alt="Poster 1" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/2.webp', 'Poster 2')">
-          <img src="assets/porto poster/2.webp" alt="Poster 2" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/2.webp', 'Poster 2')">
+          <img src="assets/2.webp" alt="Poster 2" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/3.webp', 'Poster 3')">
-          <img src="assets/porto poster/3.webp" alt="Poster 3" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/3.webp', 'Poster 3')">
+          <img src="assets/3.webp" alt="Poster 3" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/4.webp', 'Poster 4')">
-          <img src="assets/porto poster/4.webp" alt="Poster 4" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/4.webp', 'Poster 4')">
+          <img src="assets/4.webp" alt="Poster 4" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/AWA.webp', 'AWA')">
-          <img src="assets/porto poster/AWA.webp" alt="AWA" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/AWA.webp', 'AWA')">
+          <img src="assets/AWA.webp" alt="AWA" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/BANNER.webp', 'BANNER')">
-          <img src="assets/porto poster/BANNER.webp" alt="BANNER" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/BANNER.webp', 'BANNER')">
+          <img src="assets/BANNER.webp" alt="BANNER" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/Ir SOEKARNO.webp', 'Ir SOEKARNO')">
-          <img src="assets/porto poster/Ir SOEKARNO.webp" alt="Ir SOEKARNO" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/Ir SOEKARNO.webp', 'Ir SOEKARNO')">
+          <img src="assets/Ir SOEKARNO.webp" alt="Ir SOEKARNO" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/KEINDAHAN.webp', 'KEINDAHAN')">
-          <img src="assets/porto poster/KEINDAHAN.webp" alt="KEINDAHAN" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/KEINDAHAN.webp', 'KEINDAHAN')">
+          <img src="assets/KEINDAHAN.webp" alt="KEINDAHAN" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp', 'LATIHAN GABUNGAN PENGGALANG JASINGA 2025')">
-          <img src="assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="LATIHAN GABUNGAN" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp', 'LATIHAN GABUNGAN PENGGALANG JASINGA 2025')">
+          <img src="assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="LATIHAN GABUNGAN" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/Produktif atau membakar diri.webp', 'Produktif atau membakar diri')">
-          <img src="assets/porto poster/Produktif atau membakar diri.webp" alt="Produktif" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/Produktif atau membakar diri.webp', 'Produktif atau membakar diri')">
+          <img src="assets/Produktif atau membakar diri.webp" alt="Produktif" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/WEBINAR.webp', 'WEBINAR')">
-          <img src="assets/porto poster/WEBINAR.webp" alt="WEBINAR" loading="lazy">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/WEBINAR.webp', 'WEBINAR')">
+          <img src="assets/WEBINAR.webp" alt="WEBINAR" loading="lazy">
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
       </div>
@@ -496,57 +501,102 @@
       
       <!-- GitHub Stats -->
       <div class="bg-gray-900/90 border border-cyber-purple/30 rounded-lg p-6 mb-8">
-        <h3 class="text-cyber-cyan font-bold mb-4 font-mono">// GITHUB STATS</h3>
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-6 h-6 text-cyber-cyan" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <h3 class="text-cyber-cyan font-bold font-mono text-lg">// GITHUB STATS</h3>
+        </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
-            <div class="text-3xl font-bold text-cyber-purple neon-text">14</div>
-            <div class="text-xs text-gray-400 mt-1 font-mono">Commits</div>
+          <div class="bg-gray-800/80 border border-cyber-purple/30 rounded-lg p-5 text-center hover:border-cyber-cyan transition-colors group">
+            <div class="text-4xl font-bold text-cyber-purple neon-text group-hover:text-cyber-cyan transition-colors">14</div>
+            <div class="text-xs text-gray-400 mt-2 font-mono flex items-center justify-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Commits
+            </div>
           </div>
-          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
-            <div class="text-3xl font-bold text-cyber-pink neon-text-pink">5</div>
-            <div class="text-xs text-gray-400 mt-1 font-mono">Repositories</div>
+          <div class="bg-gray-800/80 border border-cyber-purple/30 rounded-lg p-5 text-center hover:border-cyber-pink transition-colors group">
+            <div class="text-4xl font-bold text-cyber-pink neon-text-pink group-hover:text-pink-400 transition-colors">5</div>
+            <div class="text-xs text-gray-400 mt-2 font-mono flex items-center justify-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span> Repositories
+            </div>
           </div>
-          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
-            <div class="text-3xl font-bold text-cyber-cyan neon-text">1</div>
-            <div class="text-xs text-gray-400 mt-1 font-mono">Followers</div>
+          <div class="bg-gray-800/80 border border-cyber-purple/30 rounded-lg p-5 text-center hover:border-cyber-cyan transition-colors group">
+            <div class="text-4xl font-bold text-cyber-cyan neon-text group-hover:text-cyan-300 transition-colors">1</div>
+            <div class="text-xs text-gray-400 mt-2 font-mono flex items-center justify-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span> Followers
+            </div>
           </div>
-          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
-            <div class="text-3xl font-bold text-cyber-green neon-text">0</div>
-            <div class="text-xs text-gray-400 mt-1 font-mono">Stars</div>
+          <div class="bg-gray-800/80 border border-cyber-purple/30 rounded-lg p-5 text-center hover:border-cyber-green transition-colors group">
+            <div class="text-4xl font-bold text-cyber-green group-hover:text-green-400 transition-colors">0</div>
+            <div class="text-xs text-gray-400 mt-2 font-mono flex items-center justify-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-yellow-400"></span> Stars
+            </div>
           </div>
         </div>
-      </div>
       
       <!-- Projects -->
       <div class="bg-gray-900/90 border border-cyber-purple/30 rounded-lg p-6">
-        <h3 class="text-cyber-cyan font-bold mb-4 font-mono">// FEATURED REPOSITORIES</h3>
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <h3 class="text-cyber-cyan font-bold font-mono text-lg">// FEATURED REPOSITORIES</h3>
+        </div>
         <div class="grid md:grid-cols-2 gap-4">
-          <a href="https://github.com/IKInecro/xampp-CLI" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-            <div>
-              <div class="text-white font-bold">xampp-CLI</div>
-              <div class="text-gray-400 text-xs font-mono">Command-line XAMPP manager</div>
+          <a href="https://github.com/IKInecro/xampp-CLI" target="_blank" rel="noopener" class="cyber-card p-5 rounded-lg flex items-start gap-4 hover:border-cyber-cyan transition-all duration-300 hover:transform hover:-translate-y-1">
+            <div class="w-12 h-12 bg-cyber-purple/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-white font-bold font-mono truncate">xampp-CLI</div>
+              <div class="text-gray-400 text-xs mt-1">Command-line XAMPP manager</div>
+              <div class="flex items-center gap-3 mt-2">
+                <span class="text-xs text-cyber-purple flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-purple-500"></span> CLI
+                </span>
+                <span class="text-xs text-gray-500">PHP</span>
+              </div>
             </div>
           </a>
-          <a href="https://github.com/IKInecro/Arduino-cli-manager" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-            <div>
-              <div class="text-white font-bold">Arduino-cli-manager</div>
-              <div class="text-gray-400 text-xs font-mono">Arduino CLI management tool</div>
+          <a href="https://github.com/IKInecro/Arduino-cli-manager" target="_blank" rel="noopener" class="cyber-card p-5 rounded-lg flex items-start gap-4 hover:border-cyber-cyan transition-all duration-300 hover:transform hover:-translate-y-1">
+            <div class="w-12 h-12 bg-cyber-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-white font-bold font-mono truncate">Arduino-cli-manager</div>
+              <div class="text-gray-400 text-xs mt-1">Arduino CLI management tool</div>
+              <div class="flex items-center gap-3 mt-2">
+                <span class="text-xs text-cyber-cyan flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-cyan-500"></span> IoT
+                </span>
+                <span class="text-xs text-gray-500">Arduino</span>
+              </div>
             </div>
           </a>
-          <a href="https://github.com/IKInecro/RFID_absensi" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-            <div>
-              <div class="text-white font-bold">RFID_absensi</div>
-              <div class="text-gray-400 text-xs font-mono">RFID-based attendance system</div>
+          <a href="https://github.com/IKInecro/RFID_absensi" target="_blank" rel="noopener" class="cyber-card p-5 rounded-lg flex items-start gap-4 hover:border-cyber-cyan transition-all duration-300 hover:transform hover:-translate-y-1">
+            <div class="w-12 h-12 bg-cyber-pink/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-cyber-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-white font-bold font-mono truncate">RFID_absensi</div>
+              <div class="text-gray-400 text-xs mt-1">RFID-based attendance system</div>
+              <div class="flex items-center gap-3 mt-2">
+                <span class="text-xs text-cyber-pink flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-pink-500"></span> System
+                </span>
+                <span class="text-xs text-gray-500">IoT</span>
+              </div>
             </div>
           </a>
-          <a href="https://github.com/IKInecro/idk-crud" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-            <div>
-              <div class="text-white font-bold">idk-crud</div>
-              <div class="text-gray-400 text-xs font-mono">Basic CRUD application</div>
+          <a href="https://github.com/IKInecro/idk-crud" target="_blank" rel="noopener" class="cyber-card p-5 rounded-lg flex items-start gap-4 hover:border-cyber-cyan transition-all duration-300 hover:transform hover:-translate-y-1">
+            <div class="w-12 h-12 bg-cyber-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-white font-bold font-mono truncate">idk-crud</div>
+              <div class="text-gray-400 text-xs mt-1">Basic CRUD application</div>
+              <div class="flex items-center gap-3 mt-2">
+                <span class="text-xs text-cyber-green flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-green-500"></span> Web
+                </span>
+                <span class="text-xs text-gray-500">Fullstack</span>
+              </div>
             </div>
           </a>
         </div>
@@ -576,8 +626,8 @@
           <div class="absolute inset-0 wavy-bg-1 opacity-90"></div>
           <div class="relative p-8">
             <div class="flex items-start gap-4 mb-4">
-              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
-                <img src="assets/porto poster/1.webp" alt="TIK" class="w-full h-full object-cover">
+            <div class="w-32 h-24 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0 aspect-[12/9]">
+                <img src="assets/1.webp" alt="TIK" class="w-full h-full object-cover">
               </div>
               <div class="flex-1">
                 <span class="text-xs font-mono text-cyan-300 mb-2 block">AKADEMIK</span>
@@ -596,8 +646,8 @@
           <div class="absolute inset-0 wavy-bg-2 opacity-90"></div>
           <div class="relative p-8">
             <div class="flex items-start gap-4 mb-4">
-              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
-                <img src="assets/porto poster/2.webp" alt="OSIS" class="w-full h-full object-cover">
+              <div class="w-32 h-24 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0 aspect-[12/9]">
+                <img src="assets/2.webp" alt="OSIS" class="w-full h-full object-cover">
               </div>
               <div class="flex-1">
                 <span class="text-xs font-mono text-red-200 mb-2 block">OSIS</span>
@@ -616,8 +666,8 @@
           <div class="absolute inset-0 wavy-bg-3 opacity-90"></div>
           <div class="relative p-8">
             <div class="flex items-start gap-4 mb-4">
-              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
-                <img src="assets/porto poster/3.webp" alt="Pramuka" class="w-full h-full object-cover">
+              <div class="w-32 h-24 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0 aspect-[12/9]">
+                <img src="assets/3.webp" alt="Pramuka" class="w-full h-full object-cover">
               </div>
               <div class="flex-1">
                 <span class="text-xs font-mono text-yellow-200 mb-2 block">PRAMUKA</span>
@@ -636,8 +686,8 @@
           <div class="absolute inset-0 wavy-bg-4 opacity-90"></div>
           <div class="relative p-8">
             <div class="flex items-start gap-4 mb-4">
-              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
-                <img src="assets/porto poster/4.webp" alt="Kepramukaan" class="w-full h-full object-cover">
+              <div class="w-32 h-24 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0 aspect-[12/9]">
+                <img src="assets/4.webp" alt="Kepramukaan" class="w-full h-full object-cover">
               </div>
               <div class="flex-1">
                 <span class="text-xs font-mono text-yellow-200 mb-2 block">PENGALAMAN</span>
@@ -662,61 +712,61 @@
         <div class="flex animate-marquee gap-4" id="galleryMarquee" style="width: max-content;">
           <div class="flex gap-4">
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/1.webp" alt="Activity 1" class="w-full h-full object-cover">
+              <img src="assets/1.webp" alt="Activity 1" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Latihan gabungan penggalang</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/2.webp" alt="Activity 2" class="w-full h-full object-cover">
+              <img src="assets/2.webp" alt="Activity 2" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Kegiatan OSIS</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/3.webp" alt="Activity 3" class="w-full h-full object-cover">
+              <img src="assets/3.webp" alt="Activity 3" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Perkemahan Pramuka</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/4.webp" alt="Activity 4" class="w-full h-full object-cover">
+              <img src="assets/4.webp" alt="Activity 4" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Event sekolah</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
+              <img src="assets/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">AWA Event</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
+              <img src="assets/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Banner kegiatan</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
+              <img src="assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Latihan gabungan 2025</div>
             </div>
           </div>
           <div class="flex gap-4">
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/1.webp" alt="Activity 1" class="w-full h-full object-cover">
+              <img src="assets/1.webp" alt="Activity 1" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Latihan gabungan penggalang</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/2.webp" alt="Activity 2" class="w-full h-full object-cover">
+              <img src="assets/2.webp" alt="Activity 2" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Kegiatan OSIS</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/3.webp" alt="Activity 3" class="w-full h-full object-cover">
+              <img src="assets/3.webp" alt="Activity 3" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Perkemahan Pramuka</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/4.webp" alt="Activity 4" class="w-full h-full object-cover">
+              <img src="assets/4.webp" alt="Activity 4" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Event sekolah</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
+              <img src="assets/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">AWA Event</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
+              <img src="assets/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Banner kegiatan</div>
             </div>
             <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
-              <img src="assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
+              <img src="assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
               <div class="gallery-desc font-mono text-sm">Latihan gabungan 2025</div>
             </div>
           </div>
