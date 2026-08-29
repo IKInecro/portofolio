@@ -2,4 +2,3 @@ node_modules/
 *.png
 package-lock.json
 .index.html.swp
-index.html.save
