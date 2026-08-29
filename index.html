@@ -6,12 +6,10 @@
   <title>IKI MARCO — Portfolio</title>
   <meta name="description" content="Portfolio website of IKI MARCO - Siswa SMA PGRI Jasinga, innovators in IoT and digital management">
   
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -38,23 +36,15 @@
     }
   </script>
   
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
   <style>
-    /* ==================== BASE STYLES ==================== */
     * { scroll-behavior: smooth; }
     body { font-family: 'Space Grotesk', sans-serif; }
     
-    /* ==================== NEO-BRUTALISM SECTION ==================== */
-    .neo-brutalism {
-      --shadow-hard: 8px 8px 0px rgba(0,0,0,1);
-      --shadow-soft: 4px 4px 0px rgba(0,0,0,1);
-    }
+    /* ==================== NEO-BRUTALISM ==================== */
     .neo-card {
       background: white;
       border: 3px solid #111;
-      box-shadow: var(--shadow-hard);
+      box-shadow: 8px 8px 0px rgba(0,0,0,1);
       transition: all 0.15s cubic-bezier(0, 0, 0.2, 1);
     }
     .neo-card:hover {
@@ -75,23 +65,14 @@
       box-shadow: none;
     }
     
-    /* Pixel cursor for neo section */
-    .neo-brutalism a, .neo-brutalism button {
-      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23111111' d='M0 0v16l4-4 3 7 3-1-3-7 6 0z'/%3E%3Cpath fill='%23FACC15' d='M2 3v10l2.5-2.5 2.8 6.5 1.4-0.6-2.8-6.4 4.1 0z'/%3E%3C/svg%3E"), pointer;
-    }
-    
-    /* Glitch effect */
     @keyframes glitch {
       0%, 92.9%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
       93% { clip-path: inset(0 0 55% 0); transform: translate(-3px, 1px); }
       95% { clip-path: inset(30% 0 30% 0); transform: translate(3px, -1px); }
       97% { clip-path: inset(60% 0 0 0); transform: translate(-2px, 2px); }
     }
-    .glitch-text {
-      position: relative;
-    }
-    .glitch-text::before,
-    .glitch-text::after {
+    .glitch-text { position: relative; }
+    .glitch-text::before, .glitch-text::after {
       content: attr(data-text);
       position: absolute;
       inset: 0;
@@ -109,109 +90,43 @@
       z-index: -2;
     }
     
-    /* Neo scrollbar */
-    .neo-scroll::-webkit-scrollbar { width: 12px; }
-    .neo-scroll::-webkit-scrollbar-track { background: #f4f4f4; border-left: 2px solid #111; }
-    .neo-scroll::-webkit-scrollbar-thumb { background: #FACC15; border: 2px solid #111; border-radius: 4px; }
-    
-    /* ==================== CYBERPUNK SECTION ==================== */
+    /* ==================== CYBERPUNK ==================== */
     .cyberpunk {
-      background: linear-gradient(180deg, #0a0a0f 0%, #111827 50%, #0a0a0f 100%);
+      background: #0d1117;
       position: relative;
       overflow: hidden;
     }
-    .cyberpunk::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    
-    /* Grid overlay */
     .cyber-grid {
       background-image: 
-        linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+        linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
       background-size: 50px 50px;
     }
-    
-    /* Neon glow text */
     .neon-text {
-      text-shadow: 
-        0 0 10px rgba(6, 182, 212, 0.8),
-        0 0 20px rgba(6, 182, 212, 0.6),
-        0 0 40px rgba(6, 182, 212, 0.4);
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(6, 182, 212, 0.4);
     }
     .neon-text-pink {
-      text-shadow: 
-        0 0 10px rgba(236, 72, 153, 0.8),
-        0 0 20px rgba(236, 72, 153, 0.6),
-        0 0 40px rgba(236, 72, 153, 0.4);
+      text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 40px rgba(236, 72, 153, 0.4);
     }
-    
-    /* Cyber card */
     .cyber-card {
-      background: rgba(17, 24, 39, 0.8);
-      border: 1px solid rgba(139, 92, 246, 0.5);
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-    .cyber-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-      pointer-events: none;
+      background: #161b22;
+      border: 1px solid #30363d;
+      transition: all 0.3s ease;
     }
     .cyber-card:hover {
-      border-color: rgba(6, 182, 212, 0.8);
-      box-shadow: 
-        0 0 20px rgba(6, 182, 212, 0.3),
-        inset 0 0 20px rgba(6, 182, 212, 0.1);
-    }
-    
-    /* Scanline effect */
-    @keyframes scanline {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100vh); }
+      border-color: #58a6ff;
+      box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
     }
     .scanlines::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 0, 0, 0.1) 2px,
-        rgba(0, 0, 0, 0.1) 4px
-      );
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 4px);
       pointer-events: none;
     }
     
-    /* Typing animation */
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    .typing-text {
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid #06B6D4;
-      animation: typing 3s steps(40) forwards, blink 0.7s step-end infinite;
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-    
-    /* ==================== MINIMALIST SECTION ==================== */
-    .minimalist {
-      background: #fafafa;
-    }
+    /* ==================== MINIMALIST ==================== */
+    .minimalist { background: #fafafa; }
     .minimal-card {
       background: white;
       border-radius: 16px;
@@ -219,41 +134,58 @@
       transition: all 0.3s ease;
       overflow: hidden;
     }
-    .minimal-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Wavy background */
-    .wavy-bg-1 {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
-    }
-    .wavy-bg-2 {
-      background: linear-gradient(135deg, #5c3a3a 0%, #7a4a4a 50%, #4a6a4a 100%);
-    }
-    .wavy-bg-3 {
-      background: linear-gradient(135deg, #5a4a3a 0%, #8a6a4a 100%);
-    }
-    .wavy-bg-4 {
-      background: linear-gradient(135deg, #5a4030 0%, #7a5040 50%, #6a3030 100%);
-    }
+    .minimal-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); }
+    .wavy-bg-1 { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); }
+    .wavy-bg-2 { background: linear-gradient(135deg, #5c3a3a 0%, #7a4a4a 50%, #4a6a4a 100%); }
+    .wavy-bg-3 { background: linear-gradient(135deg, #5a4a3a 0%, #8a6a4a 100%); }
+    .wavy-bg-4 { background: linear-gradient(135deg, #5a4030 0%, #7a5040 50%, #6a3030 100%); }
     
     /* Marquee */
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-marquee { animation: marquee 30s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+    
+    /* Section divider */
+    .section-divider { height: 4px; background: linear-gradient(90deg, #FF4D8D, #0038FF, #FACC15, #FF5500); }
+    
+    /* Modal */
+    .modal { display: none; }
+    .modal.active { display: flex; }
+    
+    /* Poster grid */
+    .poster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+    .poster-item { position: relative; aspect-ratio: auto; overflow: hidden; }
+    .poster-item img { width: 100%; height: auto; object-fit: contain; transition: transform 0.3s ease; }
+    .poster-item:hover img { transform: scale(1.05); }
+    .poster-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
     }
-    .animate-marquee {
-      animation: marquee 30s linear infinite;
+    .poster-item:hover .poster-overlay { opacity: 1; }
+    
+    /* Gallery hover pause */
+    .gallery-item { position: relative; overflow: hidden; }
+    .gallery-item:hover .gallery-desc { transform: translateY(0); opacity: 1; }
+    .gallery-desc {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 0.5rem;
+      transform: translateY(100%);
+      opacity: 0;
+      transition: all 0.3s ease;
     }
     
-    /* Section transitions */
-    .section-divider {
-      height: 4px;
-      background: linear-gradient(90deg, #FF4D8D, #0038FF, #FACC15, #FF5500);
-    }
-    
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -266,7 +198,7 @@
 <body class="bg-white text-gray-900 antialiased">
   
   <!-- ==================== SECTION 1: HEADER & BIO (NEO-BRUTALISM) ==================== -->
-  <section id="home" class="neo-brutalism min-h-screen bg-[#FAFAFA] px-4 py-12 md:py-20 overflow-hidden">
+  <section id="home" class="min-h-screen bg-[#FAFAFA] px-4 py-12 md:py-20 overflow-hidden">
     <div class="max-w-6xl mx-auto">
       
       <!-- Top metadata bar -->
@@ -277,7 +209,7 @@
         <div class="flex gap-3">
           <a href="https://github.com/IKInecro" target="_blank" rel="noopener" 
              class="neo-btn bg-white px-4 py-2 font-mono text-sm font-bold hover:bg-neo-yellow">
-            <i data-lucide="github" class="w-4 h-4 inline mr-1"></i> GitHub
+            GitHub
           </a>
         </div>
       </div>
@@ -288,18 +220,15 @@
         <!-- Left: Profile card -->
         <div class="md:col-span-4 lg:col-span-3">
           <div class="neo-card p-4">
-            <!-- Profile image -->
             <div class="relative mb-4">
               <div class="aspect-square bg-gray-200 border-4 border-gray-950 overflow-hidden">
                 <img src="assets/profile.webp" alt="IKI MARCO" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 hover:scale-105 transition-all duration-500">
               </div>
-              <!-- QR badge -->
               <div class="absolute -bottom-3 -right-3 bg-neo-yellow border-3 border-gray-950 p-2 shadow-lg">
                 <span class="font-mono text-xs font-bold">SCAN →</span>
               </div>
             </div>
             
-            <!-- Name & tagline -->
             <h1 class="font-oswald text-3xl md:text-4xl font-bold uppercase leading-tight mb-2">
               IKI MARCO
             </h1>
@@ -307,23 +236,23 @@
               Innovation • Technology • Leadership
             </p>
             
-            <!-- Social links -->
+            <!-- Social links with SVG -->
             <div class="flex flex-wrap gap-2">
               <a href="https://facebook.com/..." target="_blank" rel="noopener"
-                 class="neo-btn bg-[#1877F2] text-white px-3 py-2 text-sm font-bold flex items-center gap-1">
-                <i data-lucide="facebook" class="w-4 h-4"></i>
+                 class="neo-btn bg-[#1877F2] text-white p-2">
+                <svg class="w-5 h-5" viewBox="0 0 250 250"><path fill="#fff" d="M125 0C55.9 0 0 55.9 0 125s55.9 125 125 125 125-55.9 125-125S194.1 0 125 0zm18.1 208.6V130.8h26.4l4-32.3h-30.4v-20.6c0-9.3 2.6-15.6 16-15.6h17.1v-27.5c-3-.4-13.4-1.3-25.5-1.3-25.2 0-42.5 15.4-42.5 43.7v24h-28.5v32.3h28.5v77.8c11.5 2.5 23.4 3.9 35.4 3.9 1.1 0 2.1 0 3.2.1V208.6h-.1z"/></svg>
               </a>
               <a href="https://instagram.com/iki_marco" target="_blank" rel="noopener"
-                 class="neo-btn bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white px-3 py-2 text-sm font-bold flex items-center gap-1">
-                <i data-lucide="instagram" class="w-4 h-4"></i>
+                 class="neo-btn bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white p-2">
+                <svg class="w-5 h-5" viewBox="0 0 250 250"><rect fill="#C13584" x="50" y="50" width="150" height="150" rx="40"/><circle fill="#fff" cx="125" cy="100" r="30"/><circle fill="#fff" cx="175" cy="150" r="5"/></svg>
               </a>
               <a href="https://tiktok.com/@ikyy_marco" target="_blank" rel="noopener"
-                 class="neo-btn bg-gray-950 text-white px-3 py-2 text-sm font-bold flex items-center gap-1">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+                 class="neo-btn bg-gray-950 text-white p-2">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
               </a>
               <a href="https://github.com/IKInecro" target="_blank" rel="noopener"
-                 class="neo-btn bg-gray-800 text-white px-3 py-2 text-sm font-bold flex items-center gap-1">
-                <i data-lucide="github" class="w-4 h-4"></i>
+                 class="neo-btn bg-gray-800 text-white p-2">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               </a>
             </div>
           </div>
@@ -332,29 +261,18 @@
         <!-- Right: Bio & content -->
         <div class="md:col-span-8 lg:col-span-9">
           
-          <!-- Title with glitch -->
           <div class="mb-6">
             <div class="flex flex-wrap gap-2 mb-3">
-              <span class="bg-neo-pink text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">
-                STUDENT LEADER
-              </span>
-              <span class="bg-neo-blue text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">
-                IoT DEVELOPER
-              </span>
-              <span class="bg-neo-green text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">
-                PRAMUKA
-              </span>
+              <span class="bg-neo-pink text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">STUDENT LEADER</span>
+              <span class="bg-neo-blue text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">IoT DEVELOPER</span>
+              <span class="bg-neo-green text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">PRAMUKA</span>
             </div>
             
             <h2 class="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none tracking-tighter">
-              <span class="glitch-text" data-text="INOVASI">INOVASI</span><br>
-              <span class="bg-neo-yellow px-4 border-4 border-gray-950 shadow-[6px_6px_0px_#111] inline-block -rotate-1">
-                TEKNOLOGI
-              </span>
+              <span class="glitch-text" data-text="IKI MARCO">IKI MARCO</span>
             </h2>
           </div>
           
-          <!-- Bio text -->
           <div class="neo-card p-6 mb-6">
             <p class="font-mono text-sm md:text-base leading-relaxed text-gray-800">
               Siswa SMA PGRI Jasinga yang berfokus pada <strong class="bg-neo-green/30 px-1">inovasi teknologi</strong> dan 
@@ -367,18 +285,15 @@
             </p>
           </div>
           
-          <!-- Stats badges -->
           <div class="flex flex-wrap gap-3">
             <div class="neo-card bg-neo-green px-4 py-3 flex items-center gap-2">
               <span class="w-3 h-3 bg-white border-2 border-gray-950 rounded-full animate-pulse"></span>
               <span class="font-mono text-sm font-bold">5+ YEARS PRAMUKA</span>
             </div>
             <div class="neo-card bg-neo-blue text-white px-4 py-3 flex items-center gap-2">
-              <i data-lucide="cpu" class="w-4 h-4"></i>
               <span class="font-mono text-sm font-bold">RFID SYSTEM</span>
             </div>
             <div class="neo-card bg-neo-orange text-white px-4 py-3 flex items-center gap-2">
-              <i data-lucide="shield" class="w-4 h-4"></i>
               <span class="font-mono text-sm font-bold">OSIS LEADER</span>
             </div>
           </div>
@@ -389,14 +304,12 @@
     </div>
   </section>
   
-  <!-- Section Divider -->
   <div class="section-divider"></div>
   
   <!-- ==================== SECTION 2: PORTFOLIO / POSTER ==================== -->
   <section id="portfolio" class="bg-white px-4 py-16 md:py-24">
     <div class="max-w-7xl mx-auto">
       
-      <!-- Section header -->
       <div class="text-center mb-12">
         <span class="inline-block bg-gray-950 text-white font-oswald text-sm font-bold px-6 py-2 mb-4 tracking-wider">
           02 // KARYA & DESAIN
@@ -406,110 +319,62 @@
         </h2>
       </div>
       
-      <!-- Poster grid -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 justify-center items-center">
-        
-        <!-- Poster 1 -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/1.webp" alt="Poster 1" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+      <div class="poster-grid justify-center items-center" id="posterGrid">
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/1.webp', 'Poster 1')">
+          <img src="assets/porto poster/1.webp" alt="Poster 1" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- Poster 2 -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/2.webp" alt="Poster 2" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/2.webp', 'Poster 2')">
+          <img src="assets/porto poster/2.webp" alt="Poster 2" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- Poster 3 -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/3.webp" alt="Poster 3" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/3.webp', 'Poster 3')">
+          <img src="assets/porto poster/3.webp" alt="Poster 3" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- Poster 4 -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/4.webp" alt="Poster 4" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/4.webp', 'Poster 4')">
+          <img src="assets/porto poster/4.webp" alt="Poster 4" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- AWA -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/AWA.webp" alt="AWA" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/AWA.webp', 'AWA')">
+          <img src="assets/porto poster/AWA.webp" alt="AWA" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- BANNER -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/BANNER.webp" alt="BANNER" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/BANNER.webp', 'BANNER')">
+          <img src="assets/porto poster/BANNER.webp" alt="BANNER" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- Ir SOEKARNO -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/Ir SOEKARNO.webp" alt="Ir SOEKARNO" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/Ir SOEKARNO.webp', 'Ir SOEKARNO')">
+          <img src="assets/porto poster/Ir SOEKARNO.webp" alt="Ir SOEKARNO" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- KEINDAHAN -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/KEINDAHAN.webp" alt="KEINDAHAN" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/KEINDAHAN.webp', 'KEINDAHAN')">
+          <img src="assets/porto poster/KEINDAHAN.webp" alt="KEINDAHAN" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- LATIHAN GABUNGAN -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="LATIHAN GABUNGAN" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp', 'LATIHAN GABUNGAN PENGGALANG JASINGA 2025')">
+          <img src="assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="LATIHAN GABUNGAN" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- Produktif -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/Produktif atau membakar diri.webp" alt="Produktif" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/Produktif atau membakar diri.webp', 'Produktif atau membakar diri')">
+          <img src="assets/porto poster/Produktif atau membakar diri.webp" alt="Produktif" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
-        <!-- WEBINAR -->
-        <div class="group relative overflow-hidden border-4 border-gray-950 shadow-[6px_6px_0px_#111] hover:shadow-[8px_8px_0px_#111] transition-all duration-200 hover:-translate-y-1">
-          <img src="assets/porto poster/WEBINAR.webp" alt="WEBINAR" class="w-full h-auto object-contain bg-gray-100 aspect-[3/4]" loading="lazy">
-          <div class="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-mono text-sm font-bold">VIEW</span>
-          </div>
+        <div class="poster-item border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/porto poster/WEBINAR.webp', 'WEBINAR')">
+          <img src="assets/porto poster/WEBINAR.webp" alt="WEBINAR" loading="lazy">
+          <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
-        
       </div>
       
     </div>
   </section>
   
-  <!-- Section Divider -->
   <div class="section-divider"></div>
   
-  <!-- ==================== SECTION 3: TECH SKILLS (CYBERPUNK/GAMING) ==================== -->
+  <!-- ==================== SECTION 3: TECH SKILLS (CYBERPUNK) ==================== -->
   <section id="skills" class="cyberpunk min-h-screen px-4 py-16 md:py-24 cyber-grid relative scanlines">
     <div class="max-w-6xl mx-auto relative z-10">
       
-      <!-- Section header -->
       <div class="text-center mb-12">
         <span class="inline-block bg-cyber-purple/20 border border-cyber-purple text-cyber-cyan font-mono text-sm font-bold px-6 py-2 mb-4 neon-text">
           03 // TECH STACK
@@ -520,198 +385,205 @@
         <p class="font-mono text-gray-400 mt-4">Repository & Tools</p>
       </div>
       
-      <!-- Terminal-style container -->
-      <div class="bg-gray-900/90 border border-cyber-purple/50 rounded-lg overflow-hidden mb-8">
-        <!-- Terminal header -->
+      <!-- Skills SVG -->
+      <div class="bg-gray-900/90 border border-cyber-purple/30 rounded-lg overflow-hidden mb-8">
         <div class="flex items-center gap-2 px-4 py-3 bg-gray-800 border-b border-cyber-purple/30">
           <span class="w-3 h-3 rounded-full bg-red-500"></span>
           <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
           <span class="w-3 h-3 rounded-full bg-green-500"></span>
           <span class="ml-4 font-mono text-sm text-gray-400">~/iki-marco/skills</span>
         </div>
-        <!-- Terminal content -->
-        <div class="p-6 font-mono text-sm">
-          
-          <!-- Skills grid -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <!-- Arduino -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">⌨️</span>
-                <span class="text-cyan-400 font-bold">Arduino</span>
-              </div>
-              <p class="text-gray-400 text-xs">IoT Development</p>
-            </div>
+        <div class="p-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 310" class="w-full h-auto">
+            <defs>
+              <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0f6fc" stop-opacity=".055"/>
+                <stop offset="1" stop-color="#f0f6fc" stop-opacity=".015"/>
+              </linearGradient>
+              <linearGradient id="eg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0f6fc" stop-opacity=".18"/>
+                <stop offset="1" stop-color="#f0f6fc" stop-opacity=".03"/>
+              </linearGradient>
+              <linearGradient id="sw" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#ffffff" stop-opacity=".07"/>
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="tri" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#58a6ff"/><stop offset=".5" stop-color="#bc8cff"/><stop offset="1" stop-color="#3fb950"/>
+              </linearGradient>
+              <filter id="sh" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity=".45"/>
+              </filter>
+              <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="8"/>
+              </filter>
+              <radialGradient id="gb"><stop offset="0" stop-color="#58a6ff" stop-opacity=".10"/><stop offset="1" stop-color="#58a6ff" stop-opacity="0"/></radialGradient>
+              <radialGradient id="gp"><stop offset="0" stop-color="#bc8cff" stop-opacity=".08"/><stop offset="1" stop-color="#bc8cff" stop-opacity="0"/></radialGradient>
+              <clipPath id="clip"><rect width="880" height="310" rx="18"/></clipPath>
+              <style>
+                .sweep{animation:sweep 9s cubic-bezier(.45,.05,.35,1) infinite}
+                @keyframes sweep{0%{transform:translateX(-280px)}60%,100%{transform:translateX(1040px)}}
+                .pulse{animation:pulse 2.2s ease-in-out infinite}
+                @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+                .blink{animation:blink 1.1s steps(2,start) infinite}
+                @keyframes blink{to{visibility:hidden}}
+                .l{opacity:0;animation:fadein .45s ease forwards}
+                @keyframes fadein{to{opacity:1}}
+                .d1{animation-delay:.15s}.d2{animation-delay:.55s}.d3{animation-delay:.95s}.d4{animation-delay:1.35s}.d5{animation-delay:1.75s}
+                @media(prefers-reduced-motion:reduce){.sweep,.pulse,.blink{animation:none}.l{opacity:1;animation:none}}
+              </style>
+            </defs>
+            <rect width="880" height="310" rx="18" fill="#0d1117" stroke="#30363d"/>
+            <ellipse cx="120" cy="10" rx="280" ry="150" fill="url(#gb)"/>
+            <ellipse cx="780" cy="310" rx="300" ry="150" fill="url(#gp)"/>
+            <text x="82" y="40" font-family="'JetBrains Mono','Fira Code',monospace" font-size="11" letter-spacing="2" font-weight="bold"><tspan fill="#58a6ff">//</tspan><tspan fill="#8b949e" dx="8">LANGUAGES &amp; FRAMEWORKS</tspan></text>
+            <text x="37" y="180" font-family="'JetBrains Mono','Fira Code',monospace" font-size="11" letter-spacing="2" font-weight="bold"><tspan fill="#58a6ff">//</tspan><tspan fill="#8b949e" dx="8">TOOLS &amp; PLATFORMS</tspan></text>
             
-            <!-- C++ -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">⚡</span>
-                <span class="text-cyan-400 font-bold">C++</span>
-              </div>
-              <p class="text-gray-400 text-xs">Programming</p>
-            </div>
+            <!-- JS -->
+            <g filter="url(#sh)"><rect x="82" y="56" width="78" height="88" rx="14" fill="url(#tg)" stroke="url(#eg)"/></g>
+            <rect x="94" y="57" width="54" height="1" rx=".5" fill="#ffffff" opacity=".13"/>
+            <circle cx="121" cy="89" r="24" fill="#f1e05a" opacity=".08" filter="url(#soft)"/>
+            <svg viewBox="0 0 256 256" x="98" y="66" width="46" height="46"><rect width="256" height="256" rx="60" fill="#F0DB4F"/><path d="M67.3117 213.932L86.9027 202.076C90.6821 208.777 94.1202 214.447 102.367 214.447C110.272 214.447 115.256 211.355 115.256 199.327V117.529H139.314V199.667C139.314 224.584 124.708 235.926 103.398 235.926C84.1533 235.926 72.9819 225.959 67.3113 213.93" fill="#323330"/><path d="M152.381 211.354L171.969 200.013C177.126 208.434 183.828 214.62 195.684 214.62C205.653 214.62 212.009 209.636 212.009 202.762C212.009 194.514 205.479 191.592 194.481 186.782L188.468 184.203C171.111 176.815 159.597 167.535 159.597 147.945C159.597 129.901 173.345 116.153 194.826 116.153C210.12 116.153 221.118 121.481 229.022 135.4L210.291 147.429C206.166 140.04 201.7 137.119 194.826 137.119C187.78 137.119 183.312 141.587 183.312 147.429C183.312 154.646 187.78 157.568 198.09 162.037L204.104 164.614C224.553 173.379 236.067 182.313 236.067 202.418C236.067 224.072 219.055 235.928 196.2 235.928C173.861 235.928 159.426 225.274 152.381 211.354" fill="#323330"/></svg>
+            <text x="121" y="132" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8b949e">JS</text>
             
-            <!-- Python -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">🐍</span>
-                <span class="text-cyan-400 font-bold">Python</span>
-              </div>
-              <p class="text-gray-400 text-xs">Scripting</p>
-            </div>
+            <!-- PHP -->
+            <g filter="url(#sh)"><rect x="173" y="56" width="78" height="88" rx="14" fill="url(#tg)" stroke="url(#eg)"/></g>
+            <rect x="185" y="57" width="54" height="1" rx=".5" fill="#ffffff" opacity=".13"/>
+            <circle cx="212" cy="89" r="24" fill="#777bb3" opacity=".08" filter="url(#soft)"/>
+            <svg viewBox="0 0 256 256" x="189" y="66" width="46" height="46"><rect width="256" height="256" fill="#242938" rx="60"/><path fill="#fff" d="M49.158 100.246H77.566C85.904 100.316 91.946 102.72 95.692 107.454C99.438 112.188 100.674 118.654 99.402 126.852C98.908 130.598 97.812 134.272 96.116 137.876C94.49 141.48 92.23 144.73 89.332 147.628C85.798 151.302 82.018 153.634 77.99 154.624C73.962 155.614 69.792 156.108 65.482 156.108H52.762L48.734 176.248H34L49.158 100.246V100.246ZM61.56 112.33L55.2 144.13C55.624 144.2 56.048 144.236 56.472 144.236C56.966 144.236 57.462 144.236 57.956 144.236C64.74 144.306 70.394 143.636 74.916 142.222C79.438 140.738 82.478 135.58 84.032 126.746C85.304 119.326 84.032 115.05 80.216 113.92C76.47 112.79 71.772 112.26 66.118 112.33C65.27 112.4 64.458 112.436 63.68 112.436C62.974 112.436 62.232 112.436 61.454 112.436L61.56 112.33"/><path fill="#fff" d="M116.186 80H130.814L126.68 100.246H139.824C147.032 100.388 152.402 101.872 155.936 104.698C159.54 107.524 160.6 112.896 159.116 120.81L152.014 156.108H137.174L143.958 122.4C144.664 118.866 144.452 116.358 143.322 114.874C142.192 113.39 139.754 112.648 136.008 112.648L124.242 112.542L115.55 156.108H100.922L116.186 80Z"/><path fill="#fff" d="M174.824 100.246H203.232C211.57 100.316 217.612 102.72 221.358 107.454C225.104 112.188 226.34 118.654 225.068 126.852C224.574 130.598 223.478 134.272 221.782 137.876C220.156 141.48 217.896 144.73 214.998 147.628C211.464 151.302 207.684 153.634 203.656 154.624C199.628 155.614 195.458 156.108 191.148 156.108H178.428L174.4 176.248H159.666L174.824 100.246V100.246ZM187.226 112.33L180.866 144.13C181.29 144.2 181.714 144.236 182.138 144.236C182.632 144.236 183.128 144.236 183.622 144.236C190.406 144.306 196.06 143.636 200.582 142.222C205.104 140.738 208.144 135.58 209.698 126.746C210.97 119.326 209.698 115.05 205.882 113.92C202.136 112.79 197.438 112.26 191.784 112.33C190.936 112.4 190.124 112.436 189.346 112.436C188.64 112.436 187.898 112.436 187.12 112.436L187.226 112.33"/></svg>
+            <text x="212" y="132" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8b949e">PHP</text>
             
-            <!-- JavaScript -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">📜</span>
-                <span class="text-cyan-400 font-bold">JavaScript</span>
-              </div>
-              <p class="text-gray-400 text-xs">Web Dev</p>
-            </div>
+            <!-- HTML -->
+            <g filter="url(#sh)"><rect x="446" y="56" width="78" height="88" rx="14" fill="url(#tg)" stroke="url(#eg)"/></g>
+            <rect x="458" y="57" width="54" height="1" rx=".5" fill="#ffffff" opacity=".13"/>
+            <circle cx="485" cy="89" r="24" fill="#e34c26" opacity=".08" filter="url(#soft)"/>
+            <svg viewBox="0 0 256 256" x="462" y="66" width="46" height="46"><rect width="256" height="256" fill="#E14E1D" rx="60"/><path fill="#fff" d="M48 38L56.6098 134.593H167.32L163.605 176.023L127.959 185.661L92.38 176.037L90.0012 149.435H57.9389L62.5236 200.716L127.951 218.888L193.461 200.716L202.244 102.655H85.8241L82.901 69.9448H205.041H205.139L208 38H48Z"/><path fill="#EBEBEB" d="M128 38H48L56.6098 134.593H128V102.655H85.8241L82.901 69.9448H128V38Z"/><path fill="#EBEBEB" d="M128 185.647L127.959 185.661L92.38 176.037L90.0012 149.435H57.9388L62.5236 200.716L127.951 218.888L128 218.874V185.647Z"/></svg>
+            <text x="485" y="132" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8b949e">HTML</text>
             
-            <!-- HTML/CSS -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">🌐</span>
-                <span class="text-cyan-400 font-bold">HTML/CSS</span>
-              </div>
-              <p class="text-gray-400 text-xs">Frontend</p>
-            </div>
+            <!-- CSS -->
+            <g filter="url(#sh)"><rect x="537" y="56" width="78" height="88" rx="14" fill="url(#tg)" stroke="url(#eg)"/></g>
+            <rect x="549" y="57" width="54" height="1" rx=".5" fill="#ffffff" opacity=".13"/>
+            <circle cx="576" cy="89" r="24" fill="#2965f1" opacity=".08" filter="url(#soft)"/>
+            <svg viewBox="0 0 256 256" x="553" y="66" width="46" height="46"><rect width="256" height="256" rx="60" fill="#0277BD"/><path d="M53.7527 102.651L56.6155 134.593H128.096V102.651H53.7527Z" fill="#EBEBEB"/><path d="M128.095 38H127.985H48L50.9036 69.9423H128.095V38Z" fill="#EBEBEB"/><path d="M128.095 218.841V185.608L127.955 185.645L92.3813 176.04L90.1072 150.564H72.821H58.0425L62.5175 200.718L127.948 218.882L128.095 218.841Z" fill="#EBEBEB"/><path d="M167.318 134.593L163.61 176.019L127.985 185.635V218.866L193.468 200.718L193.948 195.321L201.454 111.229L202.233 102.651L208 38H127.985V69.9423H172.994L170.088 102.651H127.985V134.593H167.318Z" fill="white"/></svg>
+            <text x="576" y="132" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8b949e">CSS</text>
             
             <!-- Git -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">📦</span>
-                <span class="text-cyan-400 font-bold">Git</span>
-              </div>
-              <p class="text-gray-400 text-xs">Version Control</p>
-            </div>
+            <g filter="url(#sh)"><rect x="310" y="196" width="78" height="88" rx="14" fill="url(#tg)" stroke="url(#eg)"/></g>
+            <rect x="322" y="197" width="54" height="1" rx=".5" fill="#ffffff" opacity=".13"/>
+            <circle cx="349" cy="229" r="24" fill="#f05032" opacity=".08" filter="url(#soft)"/>
+            <svg viewBox="0 0 256 256" x="326" y="206" width="46" height="46"><rect width="256" height="256" fill="#F03C2E" rx="60"/><g clip-path="url(#i11_clip0_7_283)"><path fill="#fff" d="M224.225 119.094L136.906 31.775C135.711 30.5787 134.291 29.6298 132.729 28.9824C131.166 28.3349 129.491 28.0017 127.8 28.0017C126.109 28.0017 124.434 28.3349 122.871 28.9824C121.309 29.6298 119.889 30.5787 118.694 31.775L100.569 49.9L123.569 72.9C128.919 71.025 135.044 72.3062 139.306 76.5687C141.335 78.6014 142.752 81.1638 143.394 83.9632C144.036 86.7626 143.878 89.6862 142.937 92.4L165.106 114.569C170.469 112.719 176.656 113.912 180.937 118.206C182.361 119.63 183.49 121.32 184.26 123.18C185.03 125.04 185.426 127.033 185.426 129.046C185.425 131.059 185.029 133.052 184.258 134.912C183.487 136.771 182.358 138.461 180.934 139.884C179.511 141.308 177.821 142.436 175.961 143.206C174.101 143.977 172.108 144.373 170.095 144.372C168.082 144.372 166.088 143.975 164.229 143.205C162.369 142.434 160.679 141.305 159.256 139.881C154.756 135.381 153.644 128.756 155.919 123.212L135.244 102.537V156.944C136.745 157.686 138.116 158.666 139.306 159.844C140.729 161.267 141.858 162.956 142.629 164.816C143.399 166.675 143.795 168.668 143.795 170.681C143.795 172.694 143.399 174.687 142.629 176.546C141.858 178.406 140.729 180.096 139.306 181.519C137.883 182.942 136.193 184.071 134.334 184.841C132.474 185.611 130.481 186.008 128.469 186.008C126.456 186.008 124.463 185.611 122.604 184.841C120.744 184.071 119.054 182.942 117.631 181.519C116.206 180.096 115.076 178.407 114.305 176.548C113.533 174.688 113.136 172.694 113.136 170.681C113.136 168.668 113.533 166.675 114.305 164.815C115.076 162.955 116.206 161.266 117.631 159.844C119.112 158.369 120.756 157.25 122.65 156.5V101.587C120.825 100.837 119.112 99.7312 117.631 98.2437C115.479 96.0943 114.016 93.3526 113.428 90.3684C112.841 87.3841 113.155 84.2924 114.331 81.4875L91.6437 58.8125L31.7687 118.625C30.5716 119.821 29.6219 121.241 28.9739 122.804C28.3259 124.367 27.9924 126.042 27.9924 127.734C27.9924 129.426 28.3259 131.102 28.9739 132.665C29.6219 134.228 30.5716 135.648 31.7687 136.844L119.094 224.156C120.289 225.352 121.709 226.301 123.271 226.949C124.834 227.596 126.509 227.929 128.2 227.929C129.891 227.929 131.566 227.596 133.129 226.949C134.691 226.301 136.111 225.352 137.306 224.156L224.225 137.375C225.422 136.179 226.372 134.759 227.02 133.196C227.668 131.633 228.001 129.958 228.001 128.266C228.001 126.574 227.668 124.898 227.02 123.335C226.372 121.772 225.422 120.352 224.225 119.156"/></g><defs><clipPath id="i11_clip0_7_283"><rect width="200" height="200" fill="#fff" transform="translate(28 28)"/></clipPath></defs></svg>
+            <text x="349" y="272" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8b949e">GIT</text>
             
-            <!-- Linux -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">🐧</span>
-                <span class="text-cyan-400 font-bold">Linux</span>
-              </div>
-              <p class="text-gray-400 text-xs">OS / Server</p>
-            </div>
+            <!-- GitHub -->
+            <g filter="url(#sh)"><rect x="401" y="196" width="78" height="88" rx="14" fill="url(#tg)" stroke="url(#eg)"/></g>
+            <rect x="413" y="197" width="54" height="1" rx=".5" fill="#ffffff" opacity=".13"/>
+            <circle cx="440" cy="229" r="24" fill="#58a6ff" opacity=".08" filter="url(#soft)"/>
+            <svg viewBox="0 0 256 256" x="417" y="206" width="46" height="46"><rect width="256" height="256" rx="60" fill="#242938"/><path d="M128.001 30C72.7791 30 28 74.7708 28 130.001C28 174.184 56.6533 211.668 96.3867 224.891C101.384 225.817 103.219 222.722 103.219 220.081C103.219 217.696 103.126 209.819 103.083 201.463C75.2631 207.512 69.3927 189.664 69.3927 189.664C64.8437 178.105 58.2894 175.032 58.2894 175.032C49.2163 168.825 58.9733 168.953 58.9733 168.953C69.0151 169.658 74.3026 179.258 74.3026 179.258C83.2217 194.546 97.6965 190.126 103.403 187.571C104.301 181.107 106.892 176.696 109.752 174.199C87.5405 171.67 64.1913 163.095 64.1913 124.778C64.1913 113.86 68.0977 104.939 74.4947 97.9362C73.4564 95.4175 70.0335 85.2465 75.4635 71.4722C75.4635 71.4722 83.8609 68.7845 102.971 81.7226C110.948 79.5069 119.502 78.3958 128.001 78.3577C136.499 78.3958 145.061 79.5069 153.052 81.7226C172.139 68.7845 180.525 71.4722 180.525 71.4722C185.968 85.2465 182.544 95.4175 181.505 97.9362C187.917 104.939 191.797 113.86 191.797 124.778C191.797 163.187 168.403 171.644 146.135 174.119C149.722 177.223 152.918 183.308 152.918 192.638C152.918 206.018 152.802 216.787 152.802 220.081C152.802 222.742 154.602 225.86 159.671 224.878C199.383 211.64 228 174.169 228 130.001C228 74.7708 183.227 30 128.001 30ZM65.4536 172.453C65.2333 172.95 64.4517 173.099 63.7396 172.758C63.0143 172.432 62.6069 171.754 62.8421 171.256C63.0574 170.744 63.8406 170.602 64.5643 170.945C65.2913 171.271 65.7053 171.955 65.4536 172.453ZM70.3725 176.842C69.8956 177.285 68.9633 177.079 68.3307 176.38C67.6766 175.683 67.554 174.751 68.0376 174.302C68.5294 173.86 69.4336 174.067 70.0893 174.764C70.7434 175.47 70.8709 176.395 70.3725 176.842ZM73.7471 182.458C73.1344 182.884 72.1325 182.485 71.5132 181.595C70.9004 180.706 70.9004 179.64 71.5264 179.212C72.1474 178.785 73.1344 179.169 73.762 180.052C74.373 180.956 74.373 182.023 73.7471 182.458ZM79.4542 188.962C78.9061 189.566 77.7386 189.404 76.8841 188.579C76.0098 187.773 75.7663 186.629 76.3161 186.024C76.8709 185.418 78.045 185.589 78.9061 186.407C79.7738 187.211 80.0387 188.364 79.4542 188.962ZM86.8301 191.157C86.5883 191.941 85.4639 192.297 84.3312 191.964C83.2002 191.621 82.46 190.704 82.6885 189.912C82.9237 189.124 84.053 188.753 85.194 189.109C86.3234 189.45 87.0652 190.361 86.8301 191.157ZM95.2242 192.089C95.2523 192.913 94.2919 193.597 93.1029 193.612C91.9073 193.639 90.9402 192.971 90.9269 192.16C90.9269 191.327 91.8659 190.65 93.0615 190.63C94.2505 190.607 95.2242 191.269 95.2242 192.089ZM103.47 191.773C103.613 192.577 102.787 193.404 101.606 193.624C100.445 193.836 99.3702 193.339 99.2229 192.541C99.0788 191.716 99.92 190.89 101.079 190.676C102.262 190.471 103.32 190.955 103.47 191.773Z" fill="white"/></svg>
+            <text x="440" y="272" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8b949e">GITHUB</text>
             
-            <!-- RFID -->
-            <div class="cyber-card p-4 rounded-lg">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">📡</span>
-                <span class="text-cyan-400 font-bold">RFID</span>
-              </div>
-              <p class="text-gray-400 text-xs">IoT Systems</p>
-            </div>
+            <!-- VSCode -->
+            <g filter="url(#sh)"><rect x="583" y="196" width="78" height="88" rx="14" fill="url(#tg)" stroke="url(#eg)"/></g>
+            <rect x="595" y="197" width="54" height="1" rx=".5" fill="#ffffff" opacity=".13"/>
+            <circle cx="622" cy="229" r="24" fill="#007ACC" opacity=".08" filter="url(#soft)"/>
+            <svg viewBox="0 0 256 256" x="599" y="206" width="46" height="46"><rect width="256" height="256" fill="#242938" rx="60"/><path fill="#2489CA" d="M33.7158 100.208C33.7158 100.208 28.9814 96.795 34.6627 92.2381L47.8994 80.402C47.8994 80.402 51.6869 76.4172 55.6915 79.8891L177.84 172.368V216.714C177.84 216.714 177.781 223.678 168.844 222.908L33.7158 100.208Z"/><path fill="#1070B3" d="M65.1997 128.792L33.7157 157.415C33.7157 157.415 30.4805 159.822 33.7157 164.123L48.3333 177.418C48.3333 177.418 51.8052 181.147 56.9341 176.905L90.3119 151.596L65.1997 128.792Z"/><path fill="#0877B9" d="M120.474 129.029L178.215 84.9391L177.84 40.83C177.84 40.83 175.374 31.2033 167.148 36.2139L90.312 106.145L120.474 129.029Z"/><path fill="#3C99D4" d="M168.844 222.968C172.198 226.4 176.262 225.276 176.262 225.276L221.259 203.103C227.019 199.177 226.21 194.305 226.21 194.305V61.8982C226.21 56.0788 220.252 54.0667 220.252 54.0667L181.253 35.267C172.731 30 167.148 36.2139 167.148 36.2139C167.148 36.2139 174.328 31.0455 177.84 40.83V215.905C177.84 217.109 177.583 218.292 177.071 219.358C176.045 221.429 173.816 223.362 168.47 222.553L168.844 222.968Z"/></svg>
+            <text x="622" y="272" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" letter-spacing="1.5" fill="#8b949e">VSCODE</text>
+            
+            <g clip-path="url(#clip)"><rect class="sweep" x="-140" y="-40" width="150" height="390" fill="url(#sw)"/></g>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- GitHub Stats -->
+      <div class="bg-gray-900/90 border border-cyber-purple/30 rounded-lg p-6 mb-8">
+        <h3 class="text-cyber-cyan font-bold mb-4 font-mono">// GITHUB STATS</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
+            <div class="text-3xl font-bold text-cyber-purple neon-text">14</div>
+            <div class="text-xs text-gray-400 mt-1 font-mono">Commits</div>
           </div>
-          
-          <!-- GitHub Stats -->
-          <div class="border-t border-cyber-purple/30 pt-6">
-            <h3 class="text-cyber-cyan font-bold mb-4 flex items-center gap-2">
-              <i data-lucide="github" class="w-5 h-5"></i> GitHub Stats
-            </h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div class="bg-gray-800/50 border border-gray-700 rounded p-4 text-center">
-                <div class="text-3xl font-bold text-cyber-purple neon-text">14</div>
-                <div class="text-xs text-gray-400 mt-1">Commits</div>
-              </div>
-              <div class="bg-gray-800/50 border border-gray-700 rounded p-4 text-center">
-                <div class="text-3xl font-bold text-cyber-pink neon-text-pink">5</div>
-                <div class="text-xs text-gray-400 mt-1">Repositories</div>
-              </div>
-              <div class="bg-gray-800/50 border border-gray-700 rounded p-4 text-center">
-                <div class="text-3xl font-bold text-cyber-cyan neon-text">1</div>
-                <div class="text-xs text-gray-400 mt-1">Followers</div>
-              </div>
-              <div class="bg-gray-800/50 border border-gray-700 rounded p-4 text-center">
-                <div class="text-3xl font-bold text-neo-green neon-text">0</div>
-                <div class="text-xs text-gray-400 mt-1">Stars</div>
-              </div>
-            </div>
+          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
+            <div class="text-3xl font-bold text-cyber-pink neon-text-pink">5</div>
+            <div class="text-xs text-gray-400 mt-1 font-mono">Repositories</div>
           </div>
-          
-          <!-- Projects -->
-          <div class="border-t border-cyber-purple/30 pt-6 mt-6">
-            <h3 class="text-cyber-cyan font-bold mb-4 flex items-center gap-2">
-              <i data-lucide="folder" class="w-5 h-5"></i> Featured Projects
-            </h3>
-            <div class="grid md:grid-cols-2 gap-4">
-              <a href="https://github.com/IKInecro/xampp-CLI" target="_blank" rel="noopener"
-                 class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-                <span class="text-2xl">🖥️</span>
-                <div>
-                  <div class="text-white font-bold">xampp-CLI</div>
-                  <div class="text-gray-400 text-xs">Command-line XAMPP manager</div>
-                </div>
-              </a>
-              <a href="https://github.com/IKInecro/Arduino-cli-manager" target="_blank" rel="noopener"
-                 class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-                <span class="text-2xl">📟</span>
-                <div>
-                  <div class="text-white font-bold">Arduino-cli-manager</div>
-                  <div class="text-gray-400 text-xs">Arduino CLI management tool</div>
-                </div>
-              </a>
-              <a href="https://github.com/IKInecro/RFID_absensi" target="_blank" rel="noopener"
-                 class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-                <span class="text-2xl">📋</span>
-                <div>
-                  <div class="text-white font-bold">RFID_absensi</div>
-                  <div class="text-gray-400 text-xs">RFID-based attendance system</div>
-                </div>
-              </a>
-              <a href="https://github.com/IKInecro/idk-crud" target="_blank" rel="noopener"
-                 class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
-                <span class="text-2xl">🗃️</span>
-                <div>
-                  <div class="text-white font-bold">idk-crud</div>
-                  <div class="text-gray-400 text-xs">Basic CRUD application</div>
-                </div>
-              </a>
-            </div>
+          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
+            <div class="text-3xl font-bold text-cyber-cyan neon-text">1</div>
+            <div class="text-xs text-gray-400 mt-1 font-mono">Followers</div>
           </div>
-          
+          <div class="bg-gray-800 border border-gray-700 rounded p-4 text-center">
+            <div class="text-3xl font-bold text-cyber-green neon-text">0</div>
+            <div class="text-xs text-gray-400 mt-1 font-mono">Stars</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Projects -->
+      <div class="bg-gray-900/90 border border-cyber-purple/30 rounded-lg p-6">
+        <h3 class="text-cyber-cyan font-bold mb-4 font-mono">// FEATURED REPOSITORIES</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="https://github.com/IKInecro/xampp-CLI" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
+            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            <div>
+              <div class="text-white font-bold">xampp-CLI</div>
+              <div class="text-gray-400 text-xs font-mono">Command-line XAMPP manager</div>
+            </div>
+          </a>
+          <a href="https://github.com/IKInecro/Arduino-cli-manager" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
+            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            <div>
+              <div class="text-white font-bold">Arduino-cli-manager</div>
+              <div class="text-gray-400 text-xs font-mono">Arduino CLI management tool</div>
+            </div>
+          </a>
+          <a href="https://github.com/IKInecro/RFID_absensi" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
+            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            <div>
+              <div class="text-white font-bold">RFID_absensi</div>
+              <div class="text-gray-400 text-xs font-mono">RFID-based attendance system</div>
+            </div>
+          </a>
+          <a href="https://github.com/IKInecro/idk-crud" target="_blank" rel="noopener" class="cyber-card p-4 rounded-lg flex items-center gap-4 hover:border-cyber-cyan transition-colors">
+            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            <div>
+              <div class="text-white font-bold">idk-crud</div>
+              <div class="text-gray-400 text-xs font-mono">Basic CRUD application</div>
+            </div>
+          </a>
         </div>
       </div>
       
     </div>
   </section>
   
-  <!-- Section Divider -->
   <div class="section-divider"></div>
   
   <!-- ==================== SECTION 4: ORGANIZATION & SOCIAL SKILLS (MINIMALIST) ==================== -->
   <section id="organization" class="minimalist px-4 py-16 md:py-24">
     <div class="max-w-6xl mx-auto">
       
-      <!-- Section header -->
       <div class="text-center mb-16">
-        <span class="inline-block text-sm font-mono text-gray-500 mb-4 tracking-widest">
-          04 // EXPERIENCE
-        </span>
+        <span class="inline-block text-sm font-mono text-gray-500 mb-4 tracking-widest">04 // EXPERIENCE</span>
         <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase text-gray-900">
           Organization & <span class="text-gray-400">Social</span>
         </h2>
       </div>
       
-      <!-- Organization cards -->
+      <!-- Organization cards with photo frames -->
       <div class="grid md:grid-cols-2 gap-6 mb-16">
         
-        <!-- Card 1: Ketua Bidang TIK -->
+        <!-- Card 1 -->
         <div class="minimal-card relative overflow-hidden">
           <div class="absolute inset-0 wavy-bg-1 opacity-90"></div>
           <div class="relative p-8">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <span class="text-xs font-mono text-cyan-300 mb-2 block">AKADEMIK</span>
-                <h3 class="font-oswald text-2xl font-bold text-white">Ketua Bidang TIK</h3>
-                <p class="text-cyan-200 text-sm">SMA PGRI Jasinga</p>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="assets/porto poster/1.webp" alt="TIK" class="w-full h-full object-cover">
               </div>
-              <span class="bg-white/20 text-white text-xs font-mono px-3 py-1 rounded-full backdrop-blur">
-                2024 – 2025
-              </span>
+              <div class="flex-1">
+                <span class="text-xs font-mono text-cyan-300 mb-2 block">AKADEMIK</span>
+                <h3 class="font-oswald text-xl font-bold text-white">Ketua Bidang TIK</h3>
+                <p class="text-cyan-200 text-sm">SMA PGRI Jasinga | 2024 – 2025</p>
+              </div>
             </div>
             <p class="text-cyan-100/80 text-sm leading-relaxed">
               Memimpin inovasi teknologi di lingkungan sekolah, mengelola sistem digital, dan mengkoordinasikan kegiatan TIK untuk mendukung pembelajaran.
@@ -719,19 +591,19 @@
           </div>
         </div>
         
-        <!-- Card 2: Ketua Bidang Media & Teknologi OSIS -->
+        <!-- Card 2 -->
         <div class="minimal-card relative overflow-hidden">
           <div class="absolute inset-0 wavy-bg-2 opacity-90"></div>
           <div class="relative p-8">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <span class="text-xs font-mono text-red-200 mb-2 block">OSIS</span>
-                <h3 class="font-oswald text-2xl font-bold text-white">Ketua Bidang Media & Teknologi</h3>
-                <p class="text-red-200 text-sm">SMA PGRI Jasinga</p>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="assets/porto poster/2.webp" alt="OSIS" class="w-full h-full object-cover">
               </div>
-              <span class="bg-white/20 text-white text-xs font-mono px-3 py-1 rounded-full backdrop-blur">
-                2024 – 2025
-              </span>
+              <div class="flex-1">
+                <span class="text-xs font-mono text-red-200 mb-2 block">OSIS</span>
+                <h3 class="font-oswald text-xl font-bold text-white">Ketua Bidang Media & Teknologi</h3>
+                <p class="text-red-200 text-sm">SMA PGRI Jasinga | 2024 – 2025</p>
+              </div>
             </div>
             <p class="text-red-100/80 text-sm leading-relaxed">
               Mengelola media sosial dan website OSIS, menghasilkan konten digital kreatif, serta mengintegrasikan teknologi dalam kegiatan organisasi.
@@ -739,19 +611,19 @@
           </div>
         </div>
         
-        <!-- Card 3: Sekretaris Ambalan Pramuka -->
+        <!-- Card 3 -->
         <div class="minimal-card relative overflow-hidden">
           <div class="absolute inset-0 wavy-bg-3 opacity-90"></div>
           <div class="relative p-8">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <span class="text-xs font-mono text-yellow-200 mb-2 block">PRAMUKA</span>
-                <h3 class="font-oswald text-2xl font-bold text-white">Sekretaris Ambalan</h3>
-                <p class="text-yellow-200 text-sm">SMA PGRI Jasinga</p>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="assets/porto poster/3.webp" alt="Pramuka" class="w-full h-full object-cover">
               </div>
-              <span class="bg-white/20 text-white text-xs font-mono px-3 py-1 rounded-full backdrop-blur">
-                2024 – 2025
-              </span>
+              <div class="flex-1">
+                <span class="text-xs font-mono text-yellow-200 mb-2 block">PRAMUKA</span>
+                <h3 class="font-oswald text-xl font-bold text-white">Sekretaris Ambalan</h3>
+                <p class="text-yellow-200 text-sm">SMA PGRI Jasinga | 2024 – 2025</p>
+              </div>
             </div>
             <p class="text-yellow-100/80 text-sm leading-relaxed">
               Mengelola administrasi dan dokumentasi kegiatan Pramuka, menyusun laporan kegiatan, dan memastikan kelancaran komunikasi antar anggota.
@@ -759,19 +631,19 @@
           </div>
         </div>
         
-        <!-- Card 4: Aktivitas & Pengalaman Kepramukaan -->
+        <!-- Card 4 -->
         <div class="minimal-card relative overflow-hidden">
           <div class="absolute inset-0 wavy-bg-4 opacity-90"></div>
           <div class="relative p-8">
-            <div class="flex items-start justify-between mb-4">
-              <div>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-16 h-16 border-2 border-white/50 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="assets/porto poster/4.webp" alt="Kepramukaan" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1">
                 <span class="text-xs font-mono text-yellow-200 mb-2 block">PENGALAMAN</span>
-                <h3 class="font-oswald text-2xl font-bold text-white">Aktivitas Kepramukaan</h3>
+                <h3 class="font-oswald text-xl font-bold text-white">Aktivitas Kepramukaan</h3>
                 <p class="text-yellow-200 text-sm">2019 – Sekarang</p>
               </div>
-              <span class="bg-white/20 text-white text-xs font-mono px-3 py-1 rounded-full backdrop-blur">
-                5+ YEARS
-              </span>
             </div>
             <p class="text-yellow-100/80 text-sm leading-relaxed">
               Berpengalaman dalam berbagai kegiatan Pramuka termasuk perkemahan, manajemen acara, dan pengembangan kepemimpinan. Telah mengikuti berbagai pelatihan dan kompetisi Pramuka.
@@ -786,55 +658,66 @@
         <h3 class="font-oswald text-2xl font-bold text-gray-900 mb-6 text-center">Gallery Activities</h3>
       </div>
       
-      <!-- Auto-scrolling marquee -->
       <div class="relative overflow-hidden">
-        <div class="flex animate-marquee gap-4" style="width: max-content;">
-          <!-- First set -->
+        <div class="flex animate-marquee gap-4" id="galleryMarquee" style="width: max-content;">
           <div class="flex gap-4">
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/1.webp" alt="Activity 1" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Latihan gabungan penggalang</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/2.webp" alt="Activity 2" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Kegiatan OSIS</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/3.webp" alt="Activity 3" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Perkemahan Pramuka</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/4.webp" alt="Activity 4" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Event sekolah</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">AWA Event</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Banner kegiatan</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Latihan gabungan 2025</div>
             </div>
           </div>
-          <!-- Duplicate for seamless loop -->
           <div class="flex gap-4">
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/1.webp" alt="Activity 1" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Latihan gabungan penggalang</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/2.webp" alt="Activity 2" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Kegiatan OSIS</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/3.webp" alt="Activity 3" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Perkemahan Pramuka</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/4.webp" alt="Activity 4" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Event sekolah</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">AWA Event</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Banner kegiatan</div>
             </div>
-            <div class="w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
+            <div class="gallery-item w-64 h-36 bg-gray-200 border-2 border-gray-300 rounded-lg overflow-hidden flex-shrink-0">
               <img src="assets/porto poster/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-sm">Latihan gabungan 2025</div>
             </div>
           </div>
         </div>
@@ -846,15 +729,13 @@
   <!-- Footer -->
   <footer class="bg-gray-950 text-white py-8 px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="font-mono text-sm text-gray-400 mb-4">
-        IKI MARCO © 2025 — Built with passion & code
-      </p>
+      <p class="font-mono text-sm text-gray-400 mb-4">IKI MARCO © 2025 — Built with passion & code</p>
       <div class="flex justify-center gap-4">
         <a href="https://github.com/IKInecro" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
-          <i data-lucide="github" class="w-5 h-5"></i>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         </a>
         <a href="https://instagram.com/iki_marco" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
-          <i data-lucide="instagram" class="w-5 h-5"></i>
+          <svg class="w-5 h-5" viewBox="0 0 250 250"><rect fill="#C13584" x="50" y="50" width="150" height="150" rx="40"/><circle fill="#fff" cx="125" cy="100" r="30"/><circle fill="#fff" cx="175" cy="150" r="5"/></svg>
         </a>
         <a href="https://tiktok.com/@ikyy_marco" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
@@ -863,9 +744,29 @@
     </div>
   </footer>
   
-  <!-- Initialize Lucide Icons -->
+  <!-- Modal for poster -->
+  <div id="posterModal" class="modal fixed inset-0 bg-black/90 z-50 items-center justify-center p-4" onclick="closeModal()">
+    <div class="relative max-w-4xl max-h-[90vh]" onclick="event.stopPropagation()">
+      <button class="absolute -top-10 right-0 text-white font-mono text-sm hover:text-gray-300">CLOSE [×]</button>
+      <img id="modalImage" src="" alt="" class="max-w-full max-h-[85vh] object-contain">
+      <p id="modalCaption" class="text-white text-center font-mono mt-4"></p>
+    </div>
+  </div>
+  
   <script>
-    lucide.createIcons();
+    function openModal(src, title) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('modalCaption').textContent = title;
+      document.getElementById('posterModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('posterModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
   </script>
   
 </body>
