@@ -347,6 +347,18 @@
     .org-card-modern:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(0,0,0,0.12); }
     #orgGrid { transition: transform 0.5s ease; }
 
+
+    /* Mobile khusus: IKI MARCO glitch lebih besar + outline ramping */
+    @media (max-width: 640px) {
+      .brutal-headline .glitch-outline {
+        -webkit-text-stroke-width: 1.8px !important;
+        transform: translate(3px, 3px) !important;
+      }
+      .brutal-headline .glitch-text {
+        letter-spacing: -0.02em;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;

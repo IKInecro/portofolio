@@ -266,11 +266,47 @@
         if (h2) { h2.style.transform = 'translate(-3px,-3px)'; setTimeout(()=> h2.style.transform='', 160); }
         setTimeout(() => glitchEl.classList.remove('glitch-hover'), 520);
       });
-      // auto glitch primitive — 8s, subtle
-      setInterval(() => {
+      // auto glitch loop — tiap 7s keluar, 1s kemudian masuk (scramble)
+      function scrambleTo(text, fromText) {
+        const chars = "▓█▒░/<>#";
+        let iter = 0;
+        const total = text.length;
+        return new Promise(resolve=>{
+          const iv = setInterval(()=>{
+            glitchEl.textContent = text.split('').map((c,i)=>{
+              if(c===' ') return ' ';
+              if(i < iter) return text[i];
+              return chars[Math.floor(Math.random()*chars.length)];
+            }).join('');
+            glitchEl.setAttribute('data-text', glitchEl.textContent);
+            iter += 1.4;
+            if(iter >= total+2){ clearInterval(iv); glitchEl.textContent = text; glitchEl.setAttribute('data-text', text); resolve(); }
+          }, 32);
+        });
+      }
+      setInterval(async ()=>{
         glitchEl.classList.add('glitch-hover');
-        setTimeout(() => glitchEl.classList.remove('glitch-hover'), 360);
-      }, 8000);
+        const chars = "▓█▒░/<>#";
+        // keluar: scramble ke random
+        let iter = 0;
+        const cur = glitchEl.textContent;
+        await new Promise(res=>{
+          const iv = setInterval(()=>{
+            glitchEl.textContent = cur.split('').map((c,i)=>{
+              if(c===' ') return ' ';
+              return chars[Math.floor(Math.random()*chars.length)];
+            }).join('');
+            iter++;
+            if(iter>6){ clearInterval(iv); res(); }
+          }, 28);
+        });
+        glitchEl.classList.remove('glitch-hover');
+        setTimeout(async ()=>{
+          glitchEl.classList.add('glitch-hover');
+          await scrambleTo(finalText, glitchEl.textContent);
+          setTimeout(()=> glitchEl.classList.remove('glitch-hover'), 380);
+        }, 1000);
+      }, 7000);
     }
 
     // Head underline grow
