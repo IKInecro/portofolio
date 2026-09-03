@@ -1,3 +1,41 @@
+    /* Loader — 5s white full-screen then fade, header entrance smooth */
+    (function() {
+      const loader = document.getElementById('loaderOverlay');
+      if (!loader) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        loader.style.display = 'none';
+        document.body.classList.remove('loading');
+        document.body.classList.add('loaded');
+        return;
+      }
+      const start = Date.now();
+      const minDuration = 3500;
+      function hide() {
+        const elapsed = Date.now() - start;
+        const remaining = Math.max(0, minDuration - elapsed);
+        setTimeout(() => {
+          loader.style.opacity = '0';
+          loader.style.visibility = 'hidden';
+          // jeda in-out 0.5 detik sebelum header entrance
+          setTimeout(() => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+            document.body.style.overflow = '';
+            document.querySelectorAll('#home .head-fade').forEach((el)=>{
+              el.style.animation = 'none';
+              el.offsetHeight;
+              el.style.animation = '';
+            });
+          }, 500);
+          setTimeout(() => { if (loader.parentNode) loader.remove(); }, 1300);
+        }, remaining);
+      }
+      window.addEventListener('load', hide);
+      // fallback if load already fired
+      if (document.readyState === 'complete') hide();
+      else setTimeout(hide, minDuration + 500);
+    })();
+
     function openModal(src, title) {
       document.getElementById('modalImage').src = src;
       document.getElementById('modalCaption').textContent = title;
@@ -163,7 +201,7 @@
             const cx = (lastE.clientX - rect.left) / rect.width - 0.5;
             const cy = (lastE.clientY - rect.top) / rect.height - 0.5;
             parallaxShapes.forEach((el, i) => {
-              const depth = (i + 1) * 4;
+              const depth = (i + 1) * 6;
               el.style.transform = `translate(${cx * depth}px, ${cy * depth}px)`;
             });
             ticking = false;
@@ -185,8 +223,9 @@
       });
       el.addEventListener('mouseleave', () => { el.style.transform = ''; });
     });
-    // Magnetic pills — bouncy
-    document.querySelectorAll('.magnetic-pill').forEach(el => {
+    // Magnetic pills — bouncy + idle glitch sequential 3s
+    const pillEls = document.querySelectorAll('.magnetic-pill');
+    pillEls.forEach(el => {
       if (!window.matchMedia('(hover: hover)').matches) return;
       el.addEventListener('mousemove', (e) => {
         const r = el.getBoundingClientRect();
@@ -200,34 +239,115 @@
         setTimeout(() => el.style.transform = '', 140);
       });
     });
+    // Idle glitch berurutan 3s: 5+ YEARS → IOT DEV → OSIS → DESIGNER → loop
+    if (pillEls.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover)').matches) {
+      let pIdx = 0;
+      setInterval(() => {
+        pillEls.forEach(p => p.classList.remove('idle-glitch'));
+        const el = pillEls[pIdx % pillEls.length];
+        // jangan tabrak hover
+        if (!el.matches(':hover')) {
+          el.classList.add('idle-glitch');
+          setTimeout(() => el.classList.remove('idle-glitch'), 420);
+        }
+        pIdx++;
+      }, 3000);
+    }
 
-    /* ==================== GALLERY SHOW ALL ==================== */
+    /* ==================== GALLERY 158 — 5x desktop / 2x mobile, batch 25, Vercel-optimized ==================== */
     const galleryMoreBtn = document.getElementById('galleryMoreBtn');
     const galleryMoreLabel = document.getElementById('galleryMoreLabel');
     const galleryMoreIcon = document.getElementById('galleryMoreIcon');
+    const galleryMoreCount = document.getElementById('galleryMoreCount');
     const galleryGrid = document.getElementById('galleryGrid');
+    const gallerySentinel = document.getElementById('gallerySentinel');
+    const galleryLoading = document.getElementById('galleryLoading');
     if (galleryMoreBtn && galleryGrid) {
-      galleryMoreBtn.addEventListener('click', () => {
-        const expanded = galleryMoreBtn.getAttribute('data-expanded') === 'true';
-        if (!expanded) {
-          galleryGrid.classList.remove('hidden');
-          galleryGrid.querySelectorAll('.gallery-grid-item').forEach((el, i) => {
-            el.style.transitionDelay = (i % 4) * 0.05 + 's';
+      const TOTAL = 158, BATCH = 25;
+      let shown = 0, expanded = false;
+      const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+      // Vercel rendering-content-visibility + lazy decode
+      const imgObserver = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const img = e.target;
+            if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute('data-src'); }
+            imgObserver.unobserve(img);
+          }
+        });
+      }, { rootMargin: '400px 0px', threshold: 0.01 }) : null;
+
+      function createItem(i) {
+        const div = document.createElement('div');
+        div.className = 'gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale';
+        div.style.contentVisibility = 'auto';
+        div.style.containIntrinsicSize = '300px 225px';
+        div.setAttribute('onclick', `openModal('assets/gallery_act/${i}.webp','Gallery ${i}')`);
+        div.innerHTML = `<img data-src="assets/gallery_act/${i}.webp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3C/svg%3E" alt="Gallery ${i}" width="400" height="300" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div><span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] leading-tight opacity-0 group-hover:opacity-100 transition-opacity truncate">Gallery ${i}</span>`;
+        return div;
+      }
+
+      function addBatch() {
+        if (shown >= TOTAL) return;
+        if (galleryLoading) galleryLoading.classList.remove('hidden');
+        const next = Math.min(shown + BATCH, TOTAL);
+        const frag = document.createDocumentFragment();
+        for (let i = shown + 1; i <= next; i++) {
+          const el = createItem(i);
+          el.style.transitionDelay = (i % 5) * 0.04 + 's';
+          frag.appendChild(el);
+        }
+        // Vercel js-batch-dom-css + requestIdleCallback: batch DOM write
+        idle(() => {
+          galleryGrid.appendChild(frag);
+          const newItems = Array.from(galleryGrid.children).slice(shown);
+          newItems.forEach(el => {
+            const img = el.querySelector('img[data-src]');
+            if (img && imgObserver) imgObserver.observe(img);
             requestAnimationFrame(() => el.classList.add('is-visible'));
           });
-          galleryMoreLabel.textContent = 'HIDE GALLERY';
-          galleryMoreIcon.style.transform = 'rotate(180deg)';
+          // also observe for reveal
+          newItems.forEach(el => revealObserver.observe(el));
+          shown = next;
+          if (galleryMoreCount) galleryMoreCount.textContent = `${shown}/158`;
+          if (shown >= TOTAL) {
+            galleryMoreLabel.textContent = 'TAMPILKAN LEBIH SEDIKIT';
+            galleryMoreIcon.style.transform = 'rotate(180deg)';
+            galleryMoreBtn.setAttribute('data-expanded', 'true');
+            if (galleryLoading) galleryLoading.classList.add('hidden');
+            if (gallerySentinel) gallerySentinel.style.display = 'none';
+          } else {
+            galleryMoreLabel.textContent = `LIHAT SELENGKAPNYA (+${Math.min(BATCH, TOTAL - shown)})`;
+            if (galleryLoading) galleryLoading.classList.add('hidden');
+          }
+        });
+      }
+
+      galleryMoreBtn.addEventListener('click', () => {
+        if (!expanded) {
+          galleryGrid.classList.remove('hidden');
+          expanded = true;
           galleryMoreBtn.setAttribute('data-expanded', 'true');
-          // smooth scroll to grid
+          if (shown === 0) addBatch();
           galleryGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        } else {
+        } else if (shown >= TOTAL) {
+          // collapse
           galleryGrid.classList.add('hidden');
-          galleryGrid.querySelectorAll('.gallery-grid-item').forEach(el => el.classList.remove('is-visible'));
-          galleryMoreLabel.textContent = 'SHOW ALL GALLERY';
-          galleryMoreIcon.style.transform = '';
+          galleryGrid.innerHTML = '';
+          shown = 0; expanded = false;
           galleryMoreBtn.setAttribute('data-expanded', 'false');
+          galleryMoreLabel.textContent = 'LIHAT SELENGKAPNYA';
+          if (galleryMoreCount) galleryMoreCount.textContent = '0/158';
+          galleryMoreIcon.style.transform = '';
+          if (gallerySentinel) gallerySentinel.style.display = '';
+          window.scrollTo({ top: galleryGrid.offsetTop - 80, behavior: 'smooth' });
+        } else {
+          addBatch();
         }
       });
+
+      // Manual only: 25 per klik, tidak auto-load (user harus tekan LIHAT SELENGKAPNYA)
+      // sentinel tetap ada untuk spacing, tapi observer dimatikan sesuai request
     }
 
     /* ==================== HEADLINE GLITCH: SCRAMBLE ON LOAD + HOVER ==================== */
@@ -341,9 +461,9 @@
       }
       type();
     }
-    // Matrix rain — primitive 8fps + ultra light
+    // Matrix rain — Vercel cheap, disable on mobile/reduced-motion
     const canvas = document.getElementById('matrixCanvas');
-    if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover)').matches) {
       const ctx = canvas.getContext('2d', { alpha: true });
       let w, h, cols, ypos, rafId, lastDraw = 0, visible = false;
       function resize() {
@@ -468,11 +588,11 @@
       });
     });
 
-    // Org parallax interactive
+    // Org parallax interactive — Vercel optimized (reduced-motion + cheaper depth)
     const orgSection = document.getElementById('organization');
     const orgShapes = document.querySelectorAll('#orgParallax .parallax-org');
     const orgGrid = document.getElementById('orgGrid');
-    if (orgSection && window.matchMedia('(hover: hover)').matches) {
+    if (orgSection && window.matchMedia('(hover: hover)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       let tickingOrg = false, lastOrgE = null;
       orgSection.addEventListener('mousemove', (e)=>{
         lastOrgE = e;
@@ -483,14 +603,14 @@
             const cx = (lastOrgE.clientX - r.left)/r.width -0.5;
             const cy = (lastOrgE.clientY - r.top)/r.height -0.5;
             orgShapes.forEach((el,i)=>{
-              const d = (i+1)*6;
-              el.style.transform = `translate(${cx*d}px, ${cy*d}px) rotate(${cx*6}deg)`;
+              const d = (i+1)*3; // halve depth 6→3
+              el.style.transform = `translate(${cx*d}px, ${cy*d}px)`;
             });
-            if(orgGrid) orgGrid.style.transform = `translate(${cx*10}px, ${cy*10}px)`;
+            if(orgGrid) orgGrid.style.transform = `translate(${cx*6}px, ${cy*6}px)`; // halve 10→6
             tickingOrg=false;
           });
         }
-      });
+      }, { passive: true });
       orgSection.addEventListener('mouseleave', ()=>{
         orgShapes.forEach(el=> el.style.transform='');
         if(orgGrid) orgGrid.style.transform='';

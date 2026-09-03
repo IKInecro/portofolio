@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IKI MARCO — Portfolio</title>
   <meta name="description" content="Portfolio website of IKI MARCO - Siswa SMA PGRI Jasinga, innovators in IoT and digital management">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Oswald:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -36,27 +36,51 @@
       }
     }
   </script>
-  
+
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-white text-gray-900 antialiased">
-  
-  <!-- ==================== SECTION 1: HEADER & BIO (NEO-BRUTALISM) ==================== -->
+<body class="bg-white text-gray-900 antialiased loading">
+
+  <!-- Loader — From Uiverse.io by scissorsdog — full white 5s then fade -->
+  <div id="loaderOverlay" class="fixed inset-0 bg-white z-[100] flex items-center justify-center" style="transition: opacity 700ms ease, visibility 700ms ease;">
+    <div class="loader">
+      <div class="loader__balls">
+        <div class="loader__balls__group">
+          <div class="ball item1"></div>
+          <div class="ball item1"></div>
+          <div class="ball item1"></div>
+        </div>
+        <div class="loader__balls__group">
+          <div class="ball item2"></div>
+          <div class="ball item2"></div>
+          <div class="ball item2"></div>
+        </div>
+        <div class="loader__balls__group">
+          <div class="ball item3"></div>
+          <div class="ball item3"></div>
+          <div class="ball item3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION 1: HEADER &amp; BIO (NEO-BRUTALISM) ==================== -->
   <section id="home" class="min-h-screen bg-[#FAFAFA] px-4 py-12 md:py-20 overflow-hidden relative">
     <!-- Brutal Grid Background -->
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px); background-size: 20px 20px;"></div>
     <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image: linear-gradient(#FF4D8D 1px, transparent 1px), linear-gradient(90deg, #0038FF 1px, transparent 1px); background-size: 80px 80px;"></div>
     <!-- Diagonal stripes -->
     <div class="absolute top-0 right-0 w-96 h-96 opacity-[0.02] pointer-events-none" style="background: repeating-linear-gradient(45deg, #111 0, #111 1px, transparent 0, transparent 50%); background-size: 10px 10px;"></div>
-    <!-- Floating brutal shapes (parallax) -->
+    <!-- Floating brutal shapes (parallax) — ultra +1 neo-green -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none" id="headerParallax">
       <div class="parallax-shape absolute w-20 h-20 bg-neo-yellow border-[3px] border-gray-950 shadow-[4px_4px_0px_#111] -rotate-6" style="top:12%; left:6%;"></div>
       <div class="parallax-shape absolute w-14 h-14 bg-neo-pink border-[3px] border-gray-950 rounded-full shadow-[4px_4px_0px_#111]" style="top:22%; right:8%;"></div>
       <div class="parallax-shape absolute w-16 h-16 bg-neo-blue border-[3px] border-gray-950 shadow-[4px_4px_0px_#111] rotate-12" style="bottom:18%; left:12%;"></div>
       <div class="parallax-shape absolute w-10 h-10 bg-white border-[3px] border-gray-950 shadow-[3px_3px_0px_#111] rotate-45" style="bottom:30%; right:14%;"></div>
+      <div class="parallax-shape absolute w-12 h-12 bg-neo-green border-[3px] border-gray-950 shadow-[4px_4px_0px_#111] rotate-12" style="top:45%; left:48%;"></div>
     </div>
     <div class="max-w-6xl mx-auto">
-      
+
       <!-- Running text strip -->
       <div class="overflow-hidden bg-gray-950 border-3 border-gray-950 mb-4 head-fade" style="animation-delay:0s;">
         <div class="flex whitespace-nowrap marquee-strip py-1.5" style="width: max-content;">
@@ -74,23 +98,23 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Top metadata bar -->
       <div class="flex flex-wrap justify-between items-center gap-4 mb-8 pb-4 border-b-4 border-gray-950 head-fade" style="animation-delay:0.1s;">
         <span class="bg-gray-950 text-white px-4 py-2 font-mono text-sm font-bold tracking-wider">
           IKI MARCO // PORTFOLIO
         </span>
         <div class="flex gap-3">
-          <a href="https://github.com/IKInecro" target="_blank" rel="noopener" 
+          <a href="https://github.com/IKInecro" target="_blank" rel="noopener"
              class="neo-btn bg-white px-4 py-2 font-mono text-sm font-bold hover:bg-neo-yellow">
             GitHub
           </a>
         </div>
       </div>
-      
+
       <!-- Main content grid -->
       <div class="grid md:grid-cols-12 gap-8 items-start">
-        
+
         <!-- Left: Profile card -->
         <div class="md:col-span-4 lg:col-span-3">
           <div class="neo-card p-4 tilt-parallax head-fade" id="profileCard" style="animation-delay:0.2s;">
@@ -107,46 +131,46 @@
                 <span class="font-mono text-xs font-bold">:3</span>
               </div>
             </div>
-            
+
             <h1 class="font-oswald text-3xl md:text-4xl font-bold uppercase leading-tight mb-2">
               IKI MARCO
             </h1>
             <p class="font-mono text-sm text-gray-600 mb-4">
               Innovation • Technology • Leadership
             </p>
-            
+
             <!-- Social links with SVG -->
             <div class="flex flex-wrap gap-2">
               <a href="https://facebook.com/..." target="_blank" rel="noopener"
-                 class="neo-btn bg-[#1877F2] text-white p-2">
+                 class="neo-btn bg-[#1877F2] text-white p-2" aria-label="Facebook">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#fff"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
               </a>
               <a href="https://instagram.com/iki_marco" target="_blank" rel="noopener"
-                 class="neo-btn bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white p-2">
+                 class="neo-btn bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white p-2" aria-label="Instagram">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.15" fill="#fff" stroke="none"/></svg>
               </a>
               <a href="https://tiktok.com/@ikyy_marco" target="_blank" rel="noopener"
-                 class="neo-btn bg-gray-950 text-white p-2">
+                 class="neo-btn bg-gray-950 text-white p-2" aria-label="TikTok">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
               </a>
               <a href="https://github.com/IKInecro" target="_blank" rel="noopener"
-                 class="neo-btn bg-gray-800 text-white p-2">
+                 class="neo-btn bg-gray-800 text-white p-2" aria-label="GitHub">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               </a>
             </div>
           </div>
         </div>
-        
-        <!-- Right: Bio & content -->
+
+        <!-- Right: Bio &amp; content -->
         <div class="md:col-span-8 lg:col-span-9">
-          
+
           <div class="mb-6">
             <div class="flex flex-wrap gap-2 mb-3">
               <span class="bg-neo-pink text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">STUDENT LEADER</span>
               <span class="bg-neo-blue text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111]">IoT DEVELOPER</span>
               <span class="bg-neo-green text-white font-mono text-xs font-bold px-3 py-1 border-2 border-gray-950 shadow-[2px_2px_0px_#111] badge-wiggle">PRAMUKA</span>
             </div>
-            
+
             <h2 class="font-oswald text-6xl md:text-7xl lg:text-8xl font-bold uppercase leading-none tracking-tighter head-fade brutal-headline" style="animation-delay:0.15s;">
               <span class="relative inline-block">
                 <span class="glitch-outline absolute inset-0 translate-x-[7px] translate-y-[7px] text-transparent select-none pointer-events-none" style="-webkit-text-stroke: 3px #111; paint-order: stroke fill;" aria-hidden="true">IKI MARCO</span>
@@ -155,43 +179,44 @@
               <span class="block h-[6px] w-0 bg-gray-950 mt-3 head-underline"></span>
             </h2>
           </div>
-          
+
           <div class="neo-card p-6 mb-6 head-fade bio-card" style="animation-delay:0.3s;">
             <p class="font-mono text-sm md:text-base leading-relaxed text-gray-800">
-              Siswa SMA PGRI Jasinga yang berfokus pada <strong class="bg-neo-green/30 px-1">inovasi teknologi</strong> dan 
-              <strong class="bg-neo-yellow/50 px-1">kepemimpinan</strong>. Memiliki kompetensi teknis di bidang 
-              <strong class="bg-neo-blue/30 text-white px-1">IoT</strong> dan 
-              <strong class="bg-neo-pink/30 px-1">manajemen digital</strong>, terbukti melalui pengembangan sistem 
-              absensi berbasis RFID. Berpengalaman lebih dari <strong class="bg-neo-orange/50 px-1">5 tahun</strong> di dunia 
-              Kepramukaan serta menjabat sebagai Ketua Bidang TIK & Media OSIS. Sosok pemimpin yang adaptif dalam 
+              Siswa SMA PGRI Jasinga yang berfokus pada <strong class="bg-neo-green/30 px-1">inovasi teknologi</strong> dan
+              <strong class="bg-neo-yellow/50 px-1">kepemimpinan</strong>. Memiliki kompetensi teknis di bidang
+              <strong class="bg-neo-blue/30 text-white px-1">IoT</strong> dan
+              <strong class="bg-neo-pink/30 px-1">manajemen digital</strong>, terbukti melalui pengembangan sistem
+              absensi berbasis RFID. Berpengalaman lebih dari <strong class="bg-neo-orange/50 px-1">5 tahun</strong> di dunia
+              Kepramukaan serta menjabat sebagai Ketua Bidang TIK &amp; Media OSIS. Sosok pemimpin yang adaptif dalam
               mengintegrasikan solusi teknologi dengan aksi sosial untuk menciptakan dampak positif bagi masyarakat.
             </p>
           </div>
-          
+
           <div class="flex flex-wrap gap-3 head-fade" style="animation-delay:0.4s;">
-            <div class="neo-card bg-neo-green px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
+            <div data-text="5+ YEARS PRAMUKA" class="neo-card bg-neo-green px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
               <span class="w-3 h-3 bg-white border-2 border-gray-950 rounded-full animate-pulse"></span>
               <span class="font-mono text-sm font-bold">5+ YEARS PRAMUKA</span>
             </div>
-            <div class="neo-card bg-neo-blue text-white px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
+            <div data-text="IOT DEV" class="neo-card bg-neo-blue text-white px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
               <span class="font-mono text-sm font-bold">IOT DEV</span>
             </div>
-            <div class="neo-card bg-neo-orange text-white px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
+            <div data-text="OSIS LEADER" class="neo-card bg-neo-orange text-white px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
               <span class="font-mono text-sm font-bold">OSIS LEADER</span>
             </div>
-	    <div class="neo-card bg-neo-yellow text-white px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
+	    <div data-text="DESIGNER" class="neo-card bg-neo-yellow text-white px-4 py-3 flex items-center gap-2 magnetic-pill hover:-translate-y-1 brutal-pill hover:shadow-[10px_10px_0px_rgba(0,0,0,1)] transition-transform">
               <span class="font-mono text-sm font-bold">DESIGNER</span>
             </div>
           </div>
-          
+
+
         </div>
       </div>
-      
+
     </div>
   </section>
-  
+
   <div class="section-divider"></div>
-  
+
   <!-- ==================== SECTION 2: PORTFOLIO / POSTER ==================== -->
   <section id="portfolio" class="bg-white px-4 py-16 md:py-24 relative overflow-hidden">
     <!-- Background accent matching header brutalism vibe -->
@@ -200,16 +225,16 @@
     <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-[0.06] pointer-events-none" style="background: radial-gradient(circle, #0038FF, transparent 70%);"></div>
     <div class="absolute top-1/3 right-10 w-40 h-40 opacity-[0.04] pointer-events-none" style="background: repeating-linear-gradient(45deg, #111 0, #111 1px, transparent 0, transparent 50%); background-size: 10px 10px;"></div>
     <div class="max-w-7xl mx-auto relative z-10">
-      
+
       <div class="text-center mb-10">
         <span class="inline-block bg-gray-950 text-white font-oswald text-sm font-bold px-6 py-2 mb-4 tracking-wider reveal-up">
-          02 // KARYA & DESAIN
+          02 // KARYA &amp; DESAIN
         </span>
         <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase">
           Portfolio <span class="text-neo-pink">Poster</span>
         </h2>
       </div>
-      
+
       <div class="poster-grid justify-center items-center" id="posterGrid">
         <div class="poster-item relative reveal-scale border-4 border-gray-950 shadow-[6px_6px_0px_#111]" onclick="openModal('assets/1.webp', 'Poster 1')">
           <img src="assets/1.webp" alt="Poster 1" loading="lazy">
@@ -264,26 +289,26 @@
           <div class="poster-overlay"><span class="text-white font-mono font-bold">VIEW</span></div>
         </div>
       </div>
-      
+
       <div class="flex justify-center mt-10">
-        <button id="posterMoreBtn" class="neo-btn bg-gray-950 text-white font-mono text-sm font-bold px-8 py-3 hover:bg-neo-pink flex items-center gap-2 group">
+        <button type="button" id="posterMoreBtn" class="neo-btn bg-gray-950 text-white font-mono text-sm font-bold px-8 py-3 hover:bg-neo-pink flex items-center gap-2 group">
           <span id="posterMoreLabel">LIHAT SELENGKAPNYA</span>
           <svg id="posterMoreIcon" class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </button>
       </div>
-      
+
     </div>
   </section>
-  
+
   <div class="section-divider"></div>
-  
+
   <!-- ==================== SECTION 3: TECH SKILLS (CYBERPUNK) ==================== -->
     <!-- ==================== SECTION 3: TECH SKILLS — CYBER GAMING HUD ==================== -->
   <section id="skills" class="cyberpunk min-h-screen px-4 py-16 md:py-24 cyber-grid relative scanlines overflow-hidden">
     <!-- Matrix rain canvas -->
     <canvas id="matrixCanvas" class="absolute inset-0 w-full h-full opacity-[0.07] pointer-events-none"></canvas>
     <div class="max-w-6xl mx-auto relative z-10">
-      
+
       <div class="text-center mb-10 reveal-up">
         <span class="inline-flex items-center gap-2 bg-cyber-purple/20 border border-cyber-purple text-cyber-cyan font-mono text-sm font-bold px-6 py-2 mb-4 neon-text">
           <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span> 03 // TECH STACK
@@ -295,7 +320,7 @@
           <span class="text-cyber-cyan">></span><span id="typewriter" class="text-gray-400"></span><span class="w-2 h-5 bg-cyber-cyan animate-pulse inline-block ml-0.5"></span>
         </p>
       </div>
-      
+
       <!-- HERO INVENTORY PANEL — SVG tetap original -->
       <div class="hud-panel hud-hero relative mb-6 reveal-up">
         <div class="absolute -top-1 -left-1 w-4 h-4 border-l-2 border-t-2 border-cyber-cyan"></div>
@@ -616,7 +641,7 @@
               <span class="font-mono text-[10px] text-gray-500">50%</span>
             </div>
           </div>
-          <button id="langMoreBtn" class="mt-3 w-full flex items-center justify-center gap-1.5 font-mono text-xs text-gray-400 hover:text-cyber-cyan border border-white/5 hover:border-cyber-cyan/30 bg-white/[0.02] hover:bg-cyan-500/5 rounded-lg py-2 transition-colors">
+          <button type="button" id="langMoreBtn" class="mt-3 w-full flex items-center justify-center gap-1.5 font-mono text-xs text-gray-400 hover:text-cyber-cyan border border-white/5 hover:border-cyber-cyan/30 bg-white/[0.02] hover:bg-cyan-500/5 rounded-lg py-2 transition-colors">
             <span id="langMoreLabel">UNLOCK 4 MORE NODES</span>
             <svg id="langMoreIcon" class="w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -643,7 +668,7 @@
               </div>
               <div class="flex-1">
                 <div class="font-mono text-sm font-bold text-white leading-tight truncate">xampp-CLI</div>
-                <div class="font-mono text-xs text-gray-400 leading-relaxed mt-1 line-clamp-3">Command-line XAMPP manager for local dev. Control Apache & MySQL via terminal.</div>
+                <div class="font-mono text-xs text-gray-400 leading-relaxed mt-1 line-clamp-3">Command-line XAMPP manager for local dev. Control Apache &amp; MySQL via terminal.</div>
               </div>
               <div class="mt-3 pt-3 border-t border-white/5 flex items-center justify-between">
                 <div class="flex items-center gap-2 font-mono text-[11px] text-gray-500">
@@ -663,7 +688,7 @@
               </div>
               <div class="flex-1">
                 <div class="font-mono text-sm font-bold text-white leading-tight truncate">Arduino-cli-manager</div>
-                <div class="font-mono text-xs text-gray-400 leading-relaxed mt-1 line-clamp-3">Arduino CLI management tool. Compile & upload sketches without IDE.</div>
+                <div class="font-mono text-xs text-gray-400 leading-relaxed mt-1 line-clamp-3">Arduino CLI management tool. Compile &amp; upload sketches without IDE.</div>
               </div>
               <div class="mt-3 pt-3 border-t border-white/5 flex items-center justify-between">
                 <div class="flex items-center gap-2 font-mono text-[11px] text-gray-500">
@@ -683,7 +708,7 @@
               </div>
               <div class="flex-1">
                 <div class="font-mono text-sm font-bold text-white leading-tight truncate">RFID_absensi</div>
-                <div class="font-mono text-xs text-gray-400 leading-relaxed mt-1 line-clamp-3">RFID-based attendance system with IoT. Real-time tap & log.</div>
+                <div class="font-mono text-xs text-gray-400 leading-relaxed mt-1 line-clamp-3">RFID-based attendance system with IoT. Real-time tap &amp; log.</div>
               </div>
               <div class="mt-3 pt-3 border-t border-white/5 flex items-center justify-between">
                 <div class="flex items-center gap-2 font-mono text-[11px] text-gray-500">
@@ -720,10 +745,10 @@
 
     </div>
   </section>
-  
+
   <div class="section-divider"></div>
-  
-<!-- ==================== SECTION 4: ORGANIZATION & SOCIAL SKILLS (MINIMAL CLEAN MODERN) ==================== -->
+
+<!-- ==================== SECTION 4: ORGANIZATION &amp; SOCIAL SKILLS (MINIMAL CLEAN MODERN) ==================== -->
   <section id="organization" class="bg-[#fafafa] px-4 py-16 md:py-24 relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none opacity-[0.65]" style="background-image: radial-gradient(#d4d4d8 1.2px, transparent 1.4px), linear-gradient(rgba(47,57,169,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(47,57,169,0.04) 1px, transparent 1px); background-size: 22px 22px, 44px 44px, 44px 44px;"></div>
     <div id="orgGrid" class="absolute inset-0 pointer-events-none opacity-[0.04]" style="background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px); background-size: 56px 56px;"></div>
@@ -737,24 +762,24 @@
     <div class="absolute -top-28 -right-24 w-[420px] h-[420px] rounded-full opacity-[0.08] pointer-events-none" style="background: radial-gradient(circle, #2F39A9, transparent 70%);"></div>
     <div class="absolute bottom-0 left-1/4 w-[380px] h-[380px] rounded-full opacity-[0.07] pointer-events-none" style="background: radial-gradient(circle, #facc15, transparent 70%);"></div>
     <div class="max-w-6xl mx-auto relative z-10">
-      
+
       <div class="text-center mb-12 reveal-up">
         <span class="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-600 font-mono text-xs font-bold px-4 py-1.5 rounded-full tracking-widest shadow-sm">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> 04 // EXPERIENCE
         </span>
         <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase text-gray-900 mt-4 tracking-tight">
-          Organization & <span class="text-gray-400">Social</span>
+          Organization &amp; <span class="text-gray-400">Social</span>
         </h2>
         <p class="font-mono text-sm text-gray-500 mt-3">Leadership • Collaboration • Impact</p>
       </div>
-      
+
       <!-- Bento 2x2 modern -->
       <div class="grid md:grid-cols-2 gap-6 md:gap-7 mb-14">
-        
+
         <!-- Card 1 -->
         <div class="org-card-modern group bg-white rounded-[22px] border-2 border-[#2F39A9]/15 shadow-[0_4px_16px_rgba(47,57,169,0.12)] overflow-hidden reveal-up hover:shadow-[0_14px_32px_rgba(47,57,169,0.18)] hover:border-[#2F39A9]/30 hover:-translate-y-1 transition-all duration-300">
           <div class="relative h-56 md:h-60 overflow-hidden">
-            <img src="assets/1.webp" alt="Ketua Bidang TIK" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
+            <img src="assets/org/EKSIT.webp" alt="Ketua Bidang TIK" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
             <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/0 to-transparent"></div>
             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur border border-gray-200 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest text-gray-700 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-cyan-400"></span> EKSIT
@@ -772,11 +797,11 @@
             </span>
           </div>
         </div>
-        
+
         <!-- Card 2 -->
         <div class="org-card-modern group bg-white rounded-[22px] border-2 border-[#7f1d1d]/15 shadow-[0_4px_16px_rgba(127,29,29,0.12)] overflow-hidden reveal-up hover:shadow-[0_14px_32px_rgba(127,29,29,0.18)] hover:border-[#7f1d1d]/30 hover:-translate-y-1 transition-all duration-300" style="transition-delay:0.06s;">
           <div class="relative h-56 md:h-60 overflow-hidden">
-            <img src="assets/2.webp" alt="Ketua Bidang Media & Teknologi OSIS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
+            <img src="assets/org/OSIS.webp" alt="Ketua Bidang Media &amp; Teknologi OSIS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
             <div class="absolute inset-0 bg-gradient-to-t from-[#7f1d1d]/75 via-[#7f1d1d]/20 to-transparent"></div>
             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur border border-gray-200 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest text-gray-700 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-[#7f1d1d]"></span> OSIS
@@ -784,21 +809,21 @@
             <div class="absolute top-3 right-3 bg-gray-900 text-white text-[10px] font-mono font-bold px-2.5 py-1 rounded-full">2024 — 2025</div>
           </div>
           <div class="p-6 relative bg-gradient-to-br from-[#7f1d1d]/18 via-[#dc2626]/14 to-[#dc2626]/6">
-            <h3 class="font-oswald text-xl font-bold text-gray-900 leading-tight">Ketua Bidang Media & Teknologi</h3>
+            <h3 class="font-oswald text-xl font-bold text-gray-900 leading-tight">Ketua Bidang Media &amp; Teknologi</h3>
             <p class="font-mono text-xs text-gray-500 mt-1 mb-3">OSIS SMA PGRI Jasinga</p>
             <p class="text-sm leading-relaxed text-gray-600">
-              Mengelola media sosial & website OSIS, produksi konten digital kreatif dan integrasi teknologi di setiap kegiatan organisasi.
+              Mengelola media sosial &amp; website OSIS, produksi konten digital kreatif dan integrasi teknologi di setiap kegiatan organisasi.
             </p>
             <span class="absolute bottom-5 right-5 w-8 h-8 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-400 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </span>
           </div>
         </div>
-        
+
         <!-- Card 3 -->
         <div class="org-card-modern group bg-white rounded-[22px] border-2 border-[#78350f]/15 shadow-[0_4px_16px_rgba(120,53,15,0.12)] overflow-hidden reveal-up hover:shadow-[0_14px_32px_rgba(250,204,21,0.18)] hover:border-[#facc15]/30 hover:-translate-y-1 transition-all duration-300" style="transition-delay:0.12s;">
           <div class="relative h-56 md:h-60 overflow-hidden">
-            <img src="assets/3.webp" alt="Sekretaris Ambalan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
+            <img src="assets/org/PRAMUKA1.webp" alt="Sekretaris Ambalan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
             <div class="absolute inset-0 bg-gradient-to-t from-[#78350f]/75 via-[#facc15]/30 to-transparent"></div>
             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur border border-gray-200 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest text-gray-700 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-[#78350f]"></span> PRAMUKA
@@ -809,18 +834,18 @@
             <h3 class="font-oswald text-xl font-bold text-gray-900 leading-tight">Sekretaris Ambalan</h3>
             <p class="font-mono text-xs text-gray-500 mt-1 mb-3">SMA PGRI Jasinga</p>
             <p class="text-sm leading-relaxed text-gray-600">
-              Mengelola administrasi & dokumentasi Pramuka, menyusun laporan kegiatan dan menjaga kelancaran komunikasi antar anggota.
+              Mengelola administrasi &amp; dokumentasi Pramuka, menyusun laporan kegiatan dan menjaga kelancaran komunikasi antar anggota.
             </p>
             <span class="absolute bottom-5 right-5 w-8 h-8 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-400 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </span>
           </div>
         </div>
-        
+
         <!-- Card 4 -->
         <div class="org-card-modern group bg-white rounded-[22px] border-2 border-[#dc2626]/15 shadow-[0_4px_16px_rgba(220,38,38,0.12)] overflow-hidden reveal-up hover:shadow-[0_14px_32px_rgba(220,38,38,0.18)] hover:border-[#dc2626]/30 hover:-translate-y-1 transition-all duration-300" style="transition-delay:0.18s;">
           <div class="relative h-56 md:h-60 overflow-hidden">
-            <img src="assets/4.webp" alt="Aktivitas Kepramukaan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
+            <img src="assets/org/PENGALAMAN_PRAMUKA.webp" alt="Aktivitas Kepramukaan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]">
             <div class="absolute inset-0 bg-gradient-to-t from-[#dc2626]/75 via-[#facc15]/25 to-transparent"></div>
             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur border border-gray-200 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold tracking-widest text-gray-700 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-[#dc2626]"></span> PENGALAMAN
@@ -831,16 +856,16 @@
             <h3 class="font-oswald text-xl font-bold text-gray-900 leading-tight">Aktivitas Kepramukaan</h3>
             <p class="font-mono text-xs text-gray-500 mt-1 mb-3">5+ Years Journey</p>
             <p class="text-sm leading-relaxed text-gray-600">
-              Perkemahan, manajemen acara & leadership development. Ikut berbagai pelatihan dan kompetisi Pramuka tingkat daerah.
+              Perkemahan, manajemen acara &amp; leadership development. Ikut berbagai pelatihan dan kompetisi Pramuka tingkat daerah.
             </p>
             <span class="absolute bottom-5 right-5 w-8 h-8 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-400 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </span>
           </div>
         </div>
-        
+
       </div>
-      
+
       <!-- Gallery Activities -->
       <div class="reveal-up">
         <div class="flex flex-col items-center mb-6">
@@ -848,148 +873,118 @@
           <p class="font-mono text-xs text-gray-500 mt-1 tracking-widest">MOMENTS • LEARNING • TOGETHERNESS</p>
         </div>
       </div>
-      
+
       <div class="relative overflow-hidden rounded-[18px] border border-gray-200 bg-white shadow-sm p-3">
         <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white to-transparent z-10"></div>
         <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white to-transparent z-10"></div>
-        <div class="flex animate-marquee gap-3" id="galleryMarquee" style="width: max-content;">
+        <div class="flex animate-marquee gap-3 will-change-transform" id="galleryMarquee" style="width: max-content; contain: layout style;">
           <div class="flex gap-3">
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/1.webp', 'Latihan gabungan penggalang')">
-              <img src="assets/1.webp" alt="Activity 1" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Latihan gabungan penggalang</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/136.webp', 'Gallery 136')">
+              <img src="assets/gallery_act/136.webp" alt="Gallery 136" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 136</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/2.webp', 'Kegiatan OSIS')">
-              <img src="assets/2.webp" alt="Activity 2" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Kegiatan OSIS</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/135.webp', 'Gallery 135')">
+              <img src="assets/gallery_act/135.webp" alt="Gallery 135" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 135</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/3.webp', 'Perkemahan Pramuka')">
-              <img src="assets/3.webp" alt="Activity 3" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Perkemahan Pramuka</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/149.webp', 'Gallery 149')">
+              <img src="assets/gallery_act/149.webp" alt="Gallery 149" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 149</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/4.webp', 'Event sekolah')">
-              <img src="assets/4.webp" alt="Activity 4" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Event sekolah</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/156.webp', 'Gallery 156')">
+              <img src="assets/gallery_act/156.webp" alt="Gallery 156" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 156</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/AWA.webp', 'AWA Event')">
-              <img src="assets/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">AWA Event</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/133.webp', 'Gallery 133')">
+              <img src="assets/gallery_act/133.webp" alt="Gallery 133" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 133</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/BANNER.webp', 'Banner kegiatan')">
-              <img src="assets/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Banner kegiatan</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/101.webp', 'Gallery 101')">
+              <img src="assets/gallery_act/101.webp" alt="Gallery 101" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 101</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp', 'Latihan gabungan 2025')">
-              <img src="assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Latihan gabungan 2025</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/89.webp', 'Gallery 89')">
+              <img src="assets/gallery_act/89.webp" alt="Gallery 89" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 89</div>
+            </div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/72.webp', 'Gallery 72')">
+              <img src="assets/gallery_act/72.webp" alt="Gallery 72" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 72</div>
+            </div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/41.webp', 'Gallery 41')">
+              <img src="assets/gallery_act/41.webp" alt="Gallery 41" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 41</div>
+            </div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/131.webp', 'Gallery 131')">
+              <img src="assets/gallery_act/131.webp" alt="Gallery 131" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 131</div>
             </div>
           </div>
           <div class="flex gap-3" aria-hidden="true">
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/1.webp', 'Latihan gabungan penggalang')">
-              <img src="assets/1.webp" alt="Activity 1" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Latihan gabungan penggalang</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/136.webp', 'Gallery 136')">
+              <img src="assets/gallery_act/136.webp" alt="Gallery 136" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 136</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/2.webp', 'Kegiatan OSIS')">
-              <img src="assets/2.webp" alt="Activity 2" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Kegiatan OSIS</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/135.webp', 'Gallery 135')">
+              <img src="assets/gallery_act/135.webp" alt="Gallery 135" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 135</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/3.webp', 'Perkemahan Pramuka')">
-              <img src="assets/3.webp" alt="Activity 3" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Perkemahan Pramuka</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/149.webp', 'Gallery 149')">
+              <img src="assets/gallery_act/149.webp" alt="Gallery 149" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 149</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/4.webp', 'Event sekolah')">
-              <img src="assets/4.webp" alt="Activity 4" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Event sekolah</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/156.webp', 'Gallery 156')">
+              <img src="assets/gallery_act/156.webp" alt="Gallery 156" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 156</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/AWA.webp', 'AWA Event')">
-              <img src="assets/AWA.webp" alt="Activity 5" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">AWA Event</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/133.webp', 'Gallery 133')">
+              <img src="assets/gallery_act/133.webp" alt="Gallery 133" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 133</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/BANNER.webp', 'Banner kegiatan')">
-              <img src="assets/BANNER.webp" alt="Activity 6" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Banner kegiatan</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/101.webp', 'Gallery 101')">
+              <img src="assets/gallery_act/101.webp" alt="Gallery 101" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 101</div>
             </div>
-            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp', 'Latihan gabungan 2025')">
-              <img src="assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Activity 7" class="w-full h-full object-cover">
-              <div class="gallery-desc font-mono text-xs">Latihan gabungan 2025</div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/89.webp', 'Gallery 89')">
+              <img src="assets/gallery_act/89.webp" alt="Gallery 89" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 89</div>
+            </div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/72.webp', 'Gallery 72')">
+              <img src="assets/gallery_act/72.webp" alt="Gallery 72" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 72</div>
+            </div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/41.webp', 'Gallery 41')">
+              <img src="assets/gallery_act/41.webp" alt="Gallery 41" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 41</div>
+            </div>
+            <div class="gallery-item w-64 h-36 rounded-xl overflow-hidden border border-gray-200 bg-gray-100 flex-shrink-0 cursor-pointer" onclick="openModal('assets/gallery_act/131.webp', 'Gallery 131')">
+              <img src="assets/gallery_act/131.webp" alt="Gallery 131" width="256" height="144" loading="lazy" decoding="async" class="w-full h-full object-cover">
+              <div class="gallery-desc font-mono text-xs">Gallery 131</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="flex justify-center mt-6">
-        <button id="galleryMoreBtn" class="bg-white border border-gray-200 text-gray-900 font-mono text-xs font-bold px-6 py-2.5 rounded-full shadow-sm hover:border-gray-300 hover:bg-gray-50 hover:-translate-y-0.5 transition-all flex items-center gap-2">
-          <span id="galleryMoreLabel">SHOW ALL GALLERY</span>
-          <svg id="galleryMoreIcon" class="w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </button>
+      <!-- Grid 158 — 2x mobile / 5x desktop, paginated 25, Vercel-optimized -->
+      <div id="galleryGrid" class="hidden mt-6 grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4" style="content-visibility:auto; contain-intrinsic-size: 1px 1000px;">
+        <!-- 158 items injected via JS batch 25, lazy + IntersectionObserver -->
+      </div>
+      <div id="gallerySentinel" class="h-6 mt-2 flex justify-center items-center">
+        <span id="galleryLoading" class="hidden font-mono text-xs text-gray-400 flex items-center gap-2"><span class="w-3 h-3 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin"></span> Memuat 25 berikutnya...</span>
       </div>
 
-      <!-- Hidden full grid -->
-      <div id="galleryGrid" class="hidden mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/1.webp', 'Latihan gabungan penggalang')">
-          <img src="assets/1.webp" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] leading-tight opacity-0 group-hover:opacity-100 transition-opacity">Latihan gabungan penggalang</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/2.webp', 'Kegiatan OSIS')">
-          <img src="assets/2.webp" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Kegiatan OSIS</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/3.webp', 'Perkemahan Pramuka')">
-          <img src="assets/3.webp" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Perkemahan Pramuka</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/4.webp', 'Event sekolah')">
-          <img src="assets/4.webp" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Event sekolah</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/AWA.webp', 'AWA Event')">
-          <img src="assets/AWA.webp" alt="Gallery 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">AWA Event</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/BANNER.webp', 'Banner kegiatan')">
-          <img src="assets/BANNER.webp" alt="Gallery 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Banner kegiatan</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/BANNER (1).webp', 'Banner 1')">
-          <img src="assets/BANNER (1).webp" alt="Gallery 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Banner 1</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp', 'Latihan gabungan 2025')">
-          <img src="assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025.webp" alt="Gallery 8" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Latihan gabungan 2025</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025 (1).webp', 'Latihan gabungan 2025 (1)')">
-          <img src="assets/LATIHAN GABUNGAN PENGGALANG JASINGA 2025 (1).webp" alt="Gallery 9" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Latihan gabungan 2025 (1)</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/Produktif atau membakar diri.webp', 'Produktif atau membakar diri')">
-          <img src="assets/Produktif atau membakar diri.webp" alt="Gallery 10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Produktif atau membakar diri</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/WEBINAR.webp', 'Webinar')">
-          <img src="assets/WEBINAR.webp" alt="Gallery 11" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Webinar</span>
-        </div>
-        <div class="gallery-grid-item group relative rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-[4/3] cursor-pointer reveal-scale" onclick="openModal('assets/KEINDAHAN.webp', 'Keindahan')">
-          <img src="assets/KEINDAHAN.webp" alt="Gallery 12" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span class="absolute bottom-2 left-2 right-2 text-white font-mono text-[11px] opacity-0 group-hover:opacity-100 transition-opacity">Keindahan</span>
-        </div>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-3 mt-6">
+        <button type="button" id="galleryMoreBtn" class="bg-white border border-gray-200 text-gray-900 font-mono text-xs font-bold px-6 py-2.5 rounded-full shadow-sm hover:border-gray-300 hover:bg-gray-50 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+          <span id="galleryMoreLabel">LIHAT SELENGKAPNYA</span>
+          <span id="galleryMoreCount" class="bg-gray-900 text-white px-2 py-0.5 rounded-full text-[10px] font-mono">0/158</span>
+          <svg id="galleryMoreIcon" class="w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <a href="gallery.html" class="font-mono text-xs text-gray-500 hover:text-gray-900 underline decoration-dotted underline-offset-4">Buka gallery.html full →</a>
       </div>
-      
+
     </div>
   </section>
-  
+
 <!-- Footer — Minimal Modern -->
   <footer class="bg-gray-950 text-white border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 py-10">
@@ -1007,37 +1002,37 @@
         </nav>
         <!-- Right: social + back to top -->
         <div class="flex items-center gap-3">
-          <a href="https://github.com/IKInecro" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-white/15 bg-white/5 hover:bg-white hover:text-gray-900 flex items-center justify-center text-gray-300 transition-colors">
+          <a href="https://github.com/IKInecro" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-white/15 bg-white/5 hover:bg-white hover:text-gray-900 flex items-center justify-center text-gray-300 transition-colors" aria-label="GitHub">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
-          <a href="https://instagram.com/iki_marco" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-white/15 bg-white/5 hover:bg-white hover:text-gray-900 flex items-center justify-center text-gray-300 transition-colors">
+          <a href="https://instagram.com/iki_marco" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-white/15 bg-white/5 hover:bg-white hover:text-gray-900 flex items-center justify-center text-gray-300 transition-colors" aria-label="Instagram">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="https://tiktok.com/@ikyy_marco" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-white/15 bg-white/5 hover:bg-white hover:text-gray-900 flex items-center justify-center text-gray-300 transition-colors">
+          <a href="https://tiktok.com/@ikyy_marco" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-white/15 bg-white/5 hover:bg-white hover:text-gray-900 flex items-center justify-center text-gray-300 transition-colors" aria-label="TikTok">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
           </a>
-          <a href="#home" class="ml-2 w-9 h-9 rounded-full bg-white text-gray-900 flex items-center justify-center hover:bg-gray-100 transition-colors" title="Back to top">
+          <a href="#home" class="ml-2 w-9 h-9 rounded-full bg-white text-gray-900 flex items-center justify-center hover:bg-gray-100 transition-colors" title="Back to top" aria-label="Back to top">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
           </a>
         </div>
       </div>
       <div class="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 font-mono text-xs text-gray-500">
-        <span>IKI MARCO © 2026 — Built with passion & code</span>
+        <span>IKI MARCO © 2026 — Built with passion &amp; code</span>
         <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for collaboration</span>
       </div>
     </div>
   </footer>
-  
+
   <!-- Modal for poster -->
   <div id="posterModal" class="modal fixed inset-0 bg-black/90 z-50 items-center justify-center p-4" onclick="closeModal()">
     <div class="relative max-w-4xl max-h-[90vh]" onclick="event.stopPropagation()">
-      <button class="absolute -top-10 right-0 text-white font-mono text-sm hover:text-gray-300">CLOSE [×]</button>
-      <img id="modalImage" src="" alt="" class="max-w-full max-h-[85vh] object-contain">
+      <button type="button" class="absolute -top-10 right-0 text-white font-mono text-sm hover:text-gray-300">CLOSE [×]</button>
+      <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Preview" class="max-w-full max-h-[85vh] object-contain">
       <p id="modalCaption" class="text-white text-center font-mono mt-4"></p>
     </div>
   </div>
-  
+
   <script src="js/main.js"></script>
-  
+
 </body>
 </html>
