@@ -254,6 +254,70 @@
       }, 3000);
     }
 
+    // Brutal hamburger sticky nav — toggle + idle random 5s cyan+pink glitch
+    const hamburger = document.getElementById('brutalHamburger');
+    const brutalNavMenu = document.getElementById('brutalNavMenu');
+    if (hamburger && brutalNavMenu) {
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        brutalNavMenu.classList.toggle('hidden', expanded);
+      });
+      brutalNavMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        brutalNavMenu.classList.add('hidden');
+      }));
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !brutalNavMenu.contains(e.target)) {
+          hamburger.setAttribute('aria-expanded', 'false');
+          brutalNavMenu.classList.add('hidden');
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          hamburger.setAttribute('aria-expanded', 'false');
+          brutalNavMenu.classList.add('hidden');
+        }
+      });
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setInterval(() => {
+          if (hamburger.matches(':hover') || hamburger.getAttribute('aria-expanded') === 'true') return;
+          const rnd = Math.random();
+          if (rnd > 0.85) {
+            hamburger.classList.add('idle-glitch');
+            setTimeout(() => hamburger.classList.add('idle-shake'), 120);
+            setTimeout(() => hamburger.classList.remove('idle-glitch', 'idle-shake'), 520);
+          } else {
+            const cls = rnd < 0.5 ? 'idle-glitch' : 'idle-shake';
+            hamburger.classList.add(cls);
+            setTimeout(() => hamburger.classList.remove(cls), cls === 'idle-glitch' ? 460 : 380);
+          }
+        }, 5000);
+      }
+      // Nav HOME 3 tipe glitch 1.5s random
+      const navHome = document.getElementById('navHome');
+      if (navHome && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const homeGlitches = ['idle-glitch1','idle-glitch2','idle-glitch3'];
+        setInterval(() => {
+          if (navHome.matches(':hover') || brutalNavMenu.classList.contains('hidden')) return;
+          const cls = homeGlitches[Math.floor(Math.random()*homeGlitches.length)];
+          navHome.classList.add(cls);
+          setTimeout(() => navHome.classList.remove(cls), 460);
+        }, 1500);
+      }
+      // Nav PORTFOLIO 3 tipe gerakan idle random 2.8s
+      const navPortfolio = document.getElementById('navPortfolio');
+      if (navPortfolio && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const portClasses = ['idle-jitter','idle-peel','idle-pulse'];
+        setInterval(() => {
+          if (navPortfolio.matches(':hover') || brutalNavMenu.classList.contains('hidden')) return;
+          const cls = portClasses[Math.floor(Math.random()*portClasses.length)];
+          navPortfolio.classList.add(cls);
+          setTimeout(() => navPortfolio.classList.remove(cls), 460);
+        }, 2800);
+      }
+    }
+
     /* ==================== GALLERY 158 — 5x desktop / 2x mobile, batch 25, Vercel-optimized ==================== */
     const galleryMoreBtn = document.getElementById('galleryMoreBtn');
     const galleryMoreLabel = document.getElementById('galleryMoreLabel');

@@ -64,8 +64,42 @@
     </div>
   </div>
 
+  <!-- Brutal FIXED nav — sticky sampe bawah (fixed) — bg putih + garis bawah dihapus, sisa teks IKI MARCO -->
+  <div id="brutalStickyNav" class="fixed top-0 left-0 right-0 z-50 bg-transparent px-4 py-3 flex justify-between items-center pointer-events-none">
+    <span class="bg-gray-950 text-white px-4 py-2 font-mono text-sm font-bold tracking-wider pointer-events-auto">
+      IKI MARCO // PORTFOLIO
+    </span>
+    <button type="button" id="brutalHamburger" data-text="☰" aria-label="Toggle navigation" aria-expanded="false" class="neo-btn bg-white w-11 h-11 flex flex-col items-center justify-center gap-1.5 hover:bg-neo-yellow relative overflow-hidden pointer-events-auto">
+      <span class="hamburger-line w-6 h-0.5 bg-gray-950 transition-all duration-200"></span>
+      <span class="hamburger-line w-6 h-0.5 bg-gray-950 transition-all duration-200"></span>
+      <span class="hamburger-line w-6 h-0.5 bg-gray-950 transition-all duration-200"></span>
+    </button>
+  </div>
+  <div id="brutalNavMenu" class="hidden fixed top-[68px] right-4 md:right-8 w-72 bg-white border-[3px] border-gray-950 shadow-[8px_8px_0px_#111] z-50 p-4">
+    <nav aria-label="Brutal navigation" class="flex flex-col gap-2 font-mono text-sm font-bold">
+      <a href="#home" id="navHome" data-text="HOME" class="nav-home neo-btn bg-white px-4 py-2.5 hover:bg-neo-yellow text-center relative overflow-hidden">HOME</a>
+      <a href="#portfolio" id="navPortfolio" data-text="PORTFOLIO" class="nav-portfolio neo-btn bg-white px-4 py-2.5 hover:bg-neo-pink hover:text-white text-center relative overflow-hidden">PORTFOLIO</a>
+      <a href="#skills" id="navTech" class="nav-tech neo-btn bg-[#0d1117] text-cyber-cyan border-cyber-cyan/30 px-4 py-2.5 text-center relative overflow-hidden cyber-grid">TECH STACK</a>
+      <a href="#organization" id="navExp" class="nav-exp neo-btn bg-white px-4 py-2.5 text-center relative overflow-hidden hover:bg-white">EXPERIENCE</a>
+    </nav>
+    <div class="mt-4 pt-4 border-t-[3px] border-gray-950 flex gap-2 justify-center">
+      <a href="https://github.com/IKInecro" target="_blank" rel="noopener" aria-label="GitHub" class="neo-btn bg-gray-950 text-white w-11 h-11 flex items-center justify-center hover:bg-black">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://facebook.com/..." target="_blank" rel="noopener" aria-label="Facebook" class="neo-btn bg-[#1877F2] text-white w-11 h-11 flex items-center justify-center hover:bg-[#166fe5]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#fff"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+      </a>
+      <a href="https://instagram.com/iki_marco" target="_blank" rel="noopener" aria-label="Instagram" class="neo-btn bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white w-11 h-11 flex items-center justify-center">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.15" fill="#fff" stroke="none"/></svg>
+      </a>
+      <a href="https://tiktok.com/@ikyy_marco" target="_blank" rel="noopener" aria-label="TikTok" class="neo-btn bg-gray-950 text-white w-11 h-11 flex items-center justify-center border-white shadow-[-2px_-2px_0px_#06B6D4,2px_2px_0px_#FF4D8D] -rotate-1 hover:rotate-0">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+      </a>
+    </div>
+  </div>
+
   <!-- ==================== SECTION 1: HEADER &amp; BIO (NEO-BRUTALISM) ==================== -->
-  <section id="home" class="min-h-screen bg-[#FAFAFA] px-4 py-12 md:py-20 overflow-hidden relative">
+  <section id="home" class="min-h-screen bg-[#FAFAFA] px-4 pt-20 pb-12 md:pt-28 md:pb-20 overflow-visible relative">
     <!-- Brutal Grid Background -->
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px); background-size: 20px 20px;"></div>
     <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image: linear-gradient(#FF4D8D 1px, transparent 1px), linear-gradient(90deg, #0038FF 1px, transparent 1px); background-size: 80px 80px;"></div>
@@ -99,18 +133,7 @@
         </div>
       </div>
 
-      <!-- Top metadata bar -->
-      <div class="flex flex-wrap justify-between items-center gap-4 mb-8 pb-4 border-b-4 border-gray-950 head-fade" style="animation-delay:0.1s;">
-        <span class="bg-gray-950 text-white px-4 py-2 font-mono text-sm font-bold tracking-wider">
-          IKI MARCO // PORTFOLIO
-        </span>
-        <div class="flex gap-3">
-          <a href="https://github.com/IKInecro" target="_blank" rel="noopener"
-             class="neo-btn bg-white px-4 py-2 font-mono text-sm font-bold hover:bg-neo-yellow">
-            GitHub
-          </a>
-        </div>
-      </div>
+
 
       <!-- Main content grid -->
       <div class="grid md:grid-cols-12 gap-8 items-start">
@@ -991,7 +1014,7 @@
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
 
         <!-- Center: nav -->
-        <nav class="flex flex-wrap items-center gap-5 font-mono text-xs tracking-widest text-gray-400">
+        <nav aria-label="Footer navigation" class="flex flex-wrap items-center gap-5 font-mono text-xs tracking-widest text-gray-400">
           <a href="#home" class="hover:text-white transition-colors">HOME</a>
           <span class="w-1 h-1 rounded-full bg-gray-600"></span>
           <a href="#portfolio" class="hover:text-white transition-colors">PORTFOLIO</a>
