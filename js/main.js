@@ -457,7 +457,7 @@
       });
     });
     // Repo click override: show term then allow link
-    document.querySelectorAll('.hud-panel .cyber-card').forEach(el=>{
+    document.querySelectorAll('.hud-panel a.group').forEach(el=>{
       el.addEventListener('click', (e)=>{
         // if ctrl/cmd, let open link
         if(e.ctrlKey || e.metaKey) return;
