@@ -351,8 +351,7 @@
     /* Mobile khusus: IKI MARCO glitch lebih besar + outline ramping */
     @media (max-width: 640px) {
       .brutal-headline .glitch-outline {
-        -webkit-text-stroke-width: 1.8px !important;
-        transform: translate(3px, 3px) !important;
+        display: none !important;
       }
       .brutal-headline .glitch-text {
         letter-spacing: -0.02em;
