@@ -132,7 +132,7 @@
     
     /* Modal */
     .modal { display: none; }
-    .modal.active { display: flex; }
+    .modal.active { display: flex !important; }
     
     /* Poster grid */
     .poster-item { position: relative; overflow: hidden; }
