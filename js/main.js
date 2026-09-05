@@ -495,6 +495,22 @@
       }, 7000);
     }
 
+    // Bio highlight auto-pop every 2s sequential — pause if any hover
+    const bioStrong = document.querySelectorAll('.bio-card strong');
+    if (bioStrong.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let bi = 0;
+      function bioPop() {
+        if (document.querySelector('.bio-card strong:hover')) return;
+        bioStrong.forEach(el => el.classList.remove('auto-pop'));
+        const el = bioStrong[bi % bioStrong.length];
+        el.classList.add('auto-pop');
+        setTimeout(() => el.classList.remove('auto-pop'), 550);
+        bi++;
+      }
+      setTimeout(bioPop, 300);
+      setInterval(bioPop, 2000);
+    }
+
     // Head underline grow
     const headUnderline = document.querySelector('.head-underline');
     if (headUnderline) {
@@ -527,46 +543,7 @@
       }
       type();
     }
-    // Matrix rain — Vercel cheap, disable on mobile/reduced-motion
-    const canvas = document.getElementById('matrixCanvas');
-    if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover)').matches) {
-      const ctx = canvas.getContext('2d', { alpha: true });
-      let w, h, cols, ypos, rafId, lastDraw = 0, visible = false;
-      function resize() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        const dpr = Math.min(window.devicePixelRatio || 1, 1);
-        w = canvas.width = rect.width * dpr;
-        h = canvas.height = rect.height * dpr;
-        canvas.style.width = rect.width + 'px';
-        canvas.style.height = rect.height + 'px';
-        ctx.setTransform(dpr,0,0,dpr,0,0);
-        cols = Math.floor(rect.width / 22);
-        ypos = Array(cols).fill(0).map(()=> Math.random()*rect.height*0.6);
-      }
-      resize();
-      window.addEventListener('resize', resize);
-      const ioMatrix = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{ visible = e.isIntersecting; if(visible && !rafId) { lastDraw=0; rafId = requestAnimationFrame(draw); } else if(!visible && rafId){ cancelAnimationFrame(rafId); rafId=null; } });
-      }, {threshold:0.01});
-      ioMatrix.observe(canvas.parentElement);
-      const chars = "01";
-      function draw(now){
-        if(!visible) { rafId=null; return; }
-        if(now - lastDraw < 125) { rafId = requestAnimationFrame(draw); return; } // 8fps
-        lastDraw = now;
-        ctx.fillStyle = "rgba(13,17,23,0.22)";
-        ctx.fillRect(0,0,w,h);
-        ctx.fillStyle = "#06B6D4";
-        ctx.font = "10px JetBrains Mono";
-        ypos.forEach((y, i) => {
-          if(Math.random() > 0.72) return;
-          const text = chars[Math.floor(Math.random()*chars.length)];
-          ctx.fillText(text, i*22, y);
-          if (y > h/1.5 && Math.random() > 0.97) ypos[i]=0; else ypos[i]=y+14;
-        });
-        rafId = requestAnimationFrame(draw);
-      }
-    }
+
     // Slot machine count-up (override previous)
     const slotEls = document.querySelectorAll('.hud-panel .count-up');
     const slotObserver = new IntersectionObserver((entries)=>{

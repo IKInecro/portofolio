@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IKI MARCO — Portfolio</title>
   <meta name="description" content="Portfolio website of IKI MARCO - Siswa SMA PGRI Jasinga, innovators in IoT and digital management">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +40,8 @@
     }
   </script>
 
-  <link rel="stylesheet" href="css/style.css">
+  <script>document.write('<link rel="stylesheet" href="css/style.css?v='+Date.now()+'">')</script>
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head>
 <body class="bg-white text-gray-900 antialiased loading">
 
@@ -251,7 +255,7 @@
 
       <div class="text-center mb-10">
         <span class="inline-block bg-gray-950 text-white font-oswald text-sm font-bold px-6 py-2 mb-4 tracking-wider reveal-up">
-          02 // KARYA &amp; DESAIN
+          karya &amp; desain
         </span>
         <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase">
           Portfolio <span class="text-neo-pink">Poster</span>
@@ -340,14 +344,10 @@
   <!-- ==================== SECTION 3: TECH SKILLS (CYBERPUNK) ==================== -->
     <!-- ==================== SECTION 3: TECH SKILLS — CYBER GAMING HUD ==================== -->
   <section id="skills" class="cyberpunk min-h-screen px-4 py-16 md:py-24 cyber-grid relative scanlines overflow-hidden">
-    <!-- Matrix rain canvas -->
-    <canvas id="matrixCanvas" class="absolute inset-0 w-full h-full opacity-[0.07] pointer-events-none"></canvas>
     <div class="max-w-6xl mx-auto relative z-10">
 
       <div class="text-center mb-10 reveal-up">
-        <span class="inline-flex items-center gap-2 bg-cyber-purple/20 border border-cyber-purple text-cyber-cyan font-mono text-sm font-bold px-6 py-2 mb-4 neon-text">
-          <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span> 03 // TECH STACK
-        </span>
+
         <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase text-white neon-text">
           Tech <span class="text-cyber-pink neon-text-pink">Skills</span>
         </h2>
@@ -799,9 +799,7 @@
     <div class="max-w-6xl mx-auto relative z-10">
 
       <div class="text-center mb-12 reveal-up">
-        <span class="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-600 font-mono text-xs font-bold px-4 py-1.5 rounded-full tracking-widest shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> 04 // EXPERIENCE
-        </span>
+
         <h2 class="font-oswald text-4xl md:text-6xl font-bold uppercase text-gray-900 mt-4 tracking-tight">
           Organization &amp; <span class="text-gray-400">Social</span>
         </h2>
@@ -1069,7 +1067,7 @@
 
 
 
-  <script src="js/main.js"></script>
+  <script>document.write('<script src="js/main.js?v='+Date.now()+'"><\/script>')</script>
 
 </body>
 </html>
